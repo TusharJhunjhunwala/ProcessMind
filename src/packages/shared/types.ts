@@ -50,7 +50,7 @@ export interface Process {
   currentVersionId?: string;
   recordingUrl?: string;
   recordingDurationSec?: number;
-  sampleVideoType?: 'quickcart_orders' | 'quickcart_drift' | 'accounting_invoices' | 'dev_bugfix';
+  sampleVideoType?: 'quickcart_orders' | 'quickcart_drift' | 'accounting_invoices' | 'dev_bugfix' | 'ai_analyzed';
   createdAt: string;
   updatedAt: string;
 }

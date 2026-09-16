@@ -1076,6 +1076,16 @@ class DatabaseStore {
     return process;
   }
 
+  public updateProcessStatus(businessId: string, processId: string, status: Process['status']): Process | undefined {
+    const process = this.getProcess(businessId, processId);
+    if (process) {
+      process.status = status;
+      process.updatedAt = new Date().toISOString();
+      this.saveProcess(process);
+    }
+    return process;
+  }
+
   public getProcessVersion(versionId: string): ProcessVersion | undefined {
     return this.data.processVersions.find(v => v._id === versionId);
   }
