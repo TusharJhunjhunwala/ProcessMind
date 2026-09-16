@@ -52,7 +52,7 @@ export function Navbar() {
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            Sarah (Owner)
+            Tushar (Owner)
           </button>
           <button
             onClick={() => switchUserRole('member')}
@@ -62,7 +62,7 @@ export function Navbar() {
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            Alex (Member)
+            Ayush (Member)
           </button>
         </div>
 

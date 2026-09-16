@@ -157,7 +157,7 @@ export function DriftDiffView({
             <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 space-y-1">
               <span className="text-[10px] font-bold uppercase text-slate-400">Drift Audit Summary:</span>
               <p>
-                Employee Alex opened local workbook <strong className="text-white">DiscountCodes_2026.xlsx</strong> to cross-reference code <strong className="text-emerald-400">"SUMMER15"</strong>.
+                Employee Ayush opened local workbook <strong className="text-white">DiscountCodes_2026.xlsx</strong> to cross-reference code <strong className="text-emerald-400">"SUMMER15"</strong>.
               </p>
               <p className="text-[11px] text-slate-400 pt-1">
                 Adds 2 minutes 40 seconds of manual latency per order. Not in certified workflow v1.0.
@@ -167,7 +167,7 @@ export function DriftDiffView({
             {/* Owner Decision Gate (Section 17 & 24) */}
             <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
               <span className="text-xs font-bold text-slate-200 block">
-                Owner Review Decision (Sarah Lin)
+                Owner Review Decision (Tushar)
               </span>
 
               {resolutionStatus === 'pending' ? (
@@ -196,18 +196,18 @@ export function DriftDiffView({
               ) : resolutionStatus === 'approved_v2' ? (
                 <div className="p-3 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-semibold flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4" />
-                  <span>Approved by Sarah Lin: Baseline updated to v2.0. Spreadsheet API connector mapped.</span>
+                  <span>Approved by Tushar: Baseline updated to v2.0. Spreadsheet API connector mapped.</span>
                 </div>
               ) : (
                 <div className="p-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-xs font-semibold flex items-center gap-2">
                   <XCircle className="w-4 h-4 text-rose-400" />
-                  <span>Deviation dismissed. Notification sent to employee Alex to adhere to baseline v1.0.</span>
+                  <span>Deviation dismissed. Notification sent to employee Ayush to adhere to baseline v1.0.</span>
                 </div>
               )}
 
               {!isOwner && resolutionStatus === 'pending' && (
                 <p className="text-[10px] text-amber-300">
-                  Switch to <strong>Sarah Lin (Owner)</strong> role in the navbar to decide on this drift alert.
+                  Switch to <strong>Tushar (Owner)</strong> role in the navbar to decide on this drift alert.
                 </p>
               )}
             </div>

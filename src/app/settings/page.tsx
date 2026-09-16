@@ -130,11 +130,11 @@ export default function SettingsPage() {
           <div className="p-4 bg-slate-950/60 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center font-bold text-indigo-300">
-                S
+                T
               </div>
               <div>
-                <p className="font-bold text-slate-200">Sarah Lin</p>
-                <p className="text-[11px] text-slate-400">sarah@quickcart.demo</p>
+                <p className="font-bold text-slate-200">Tushar</p>
+                <p className="text-[11px] text-slate-400">tushar@quickcart.demo</p>
               </div>
             </div>
 
@@ -150,7 +150,7 @@ export default function SettingsPage() {
                     : 'bg-slate-800 text-slate-400 hover:text-slate-200'
                 }`}
               >
-                {currentUser.role === 'owner' ? 'Active User' : 'Switch to Sarah'}
+                {currentUser.role === 'owner' ? 'Active User' : 'Switch to Tushar'}
               </button>
             </div>
           </div>
@@ -161,8 +161,8 @@ export default function SettingsPage() {
                 A
               </div>
               <div>
-                <p className="font-bold text-slate-200">Alex Chen</p>
-                <p className="text-[11px] text-slate-400">alex@quickcart.demo</p>
+                <p className="font-bold text-slate-200">Ayush</p>
+                <p className="text-[11px] text-slate-400">ayush@quickcart.demo</p>
               </div>
             </div>
 
@@ -178,7 +178,7 @@ export default function SettingsPage() {
                     : 'bg-slate-800 text-slate-400 hover:text-slate-200'
                 }`}
               >
-                {currentUser.role === 'member' ? 'Active User' : 'Switch to Alex'}
+                {currentUser.role === 'member' ? 'Active User' : 'Switch to Ayush'}
               </button>
             </div>
           </div>

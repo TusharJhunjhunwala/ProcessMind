@@ -24,9 +24,9 @@ export function BusinessProvider({ children }: { children: React.ReactNode }) {
   const [businessId] = useState('biz_quickcart');
   const [businessName] = useState('QuickCart Online Store');
   const [currentUser, setCurrentUser] = useState<CurrentUser>({
-    _id: 'user_sarah',
-    name: 'Sarah Lin',
-    email: 'sarah@quickcart.demo',
+    _id: 'user_tushar',
+    name: 'Tushar',
+    email: 'tushar@quickcart.demo',
     role: 'owner',
   });
   const [refreshTrigger, setRefreshTrigger] = useState(0);
@@ -34,16 +34,16 @@ export function BusinessProvider({ children }: { children: React.ReactNode }) {
   const switchUserRole = (role: 'owner' | 'member') => {
     if (role === 'owner') {
       setCurrentUser({
-        _id: 'user_sarah',
-        name: 'Sarah Lin',
-        email: 'sarah@quickcart.demo',
+        _id: 'user_tushar',
+        name: 'Tushar',
+        email: 'tushar@quickcart.demo',
         role: 'owner',
       });
     } else {
       setCurrentUser({
-        _id: 'user_alex',
-        name: 'Alex Chen',
-        email: 'alex@quickcart.demo',
+        _id: 'user_ayush',
+        name: 'Ayush',
+        email: 'ayush@quickcart.demo',
         role: 'member',
       });
     }

@@ -50,8 +50,8 @@ export async function POST(req: Request) {
       processName,
       description,
       businessId: reqBizId = 'biz_quickcart',
-      userId = 'user_sarah',
-      userName = 'Business Owner',
+      userId = 'user_tushar',
+      userName = 'Tushar',
       recordingVideoUrl,
     } = body;
     businessId = reqBizId;

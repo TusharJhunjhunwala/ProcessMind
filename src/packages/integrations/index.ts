@@ -22,7 +22,7 @@ export class GitHubIntegration {
       lastCommit: {
         hash: '7e9b42a',
         message: 'feat: add QuickBooks invoice line item calculation hook',
-        author: 'Sarah Lin',
+        author: 'Tushar',
         date: '2026-08-25T11:42:00Z',
       },
       workflowDispatchAvailable: true,

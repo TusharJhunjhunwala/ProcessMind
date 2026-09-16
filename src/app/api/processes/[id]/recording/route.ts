@@ -26,8 +26,8 @@ export async function POST(
     db.addAuditLog({
       _id: `audit_${Date.now()}`,
       businessId,
-      actorId: body.userId || 'user_sarah',
-      actorName: body.userName || 'Sarah Lin (Owner)',
+      actorId: body.userId || 'user_tushar',
+      actorName: body.userName || 'Tushar (Owner)',
       action: 'RECORDING_UPLOADED',
       entityId: process._id,
       entityType: 'process',

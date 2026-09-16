@@ -16,8 +16,8 @@ export async function POST(
       body = await req.json();
     } catch (_) {}
 
-    const actorId = body.userId || 'user_sarah';
-    const actorName = body.userName || 'Sarah Lin (Owner)';
+    const actorId = body.userId || 'user_tushar';
+    const actorName = body.userName || 'Tushar (Owner)';
 
     workflow.status = 'approved';
     workflow.approvedBy = actorId;

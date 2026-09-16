@@ -208,7 +208,7 @@ export default function DashboardPage() {
                 </span>
               </div>
               <p className="text-xs text-slate-300 mt-0.5">
-                A new screen recording from employee Alex revealed an extra manual step: <strong className="text-white">"Excel Secondary Audit Check"</strong> between Payment and Invoice creation at <span className="font-mono text-rose-300">00:31</span>.
+                A new screen recording from employee Ayush revealed an extra manual step: <strong className="text-white">"Excel Secondary Audit Check"</strong> between Payment and Invoice creation at <span className="font-mono text-rose-300">00:31</span>.
               </p>
             </div>
           </div>

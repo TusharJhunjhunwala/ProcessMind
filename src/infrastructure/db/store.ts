@@ -36,7 +36,7 @@ if (!fs.existsSync(DB_DIR)) {
 
 export function getInitialSeedData(): DatabaseSchema {
   const businessId = 'biz_quickcart';
-  const ownerId = 'user_sarah';
+  const ownerId = 'user_tushar';
 
   const defaultBusiness: Business = {
     _id: businessId,
@@ -50,15 +50,15 @@ export function getInitialSeedData(): DatabaseSchema {
     {
       _id: ownerId,
       businessId,
-      name: 'Sarah Lin',
-      email: 'sarah@quickcart.demo',
+      name: 'Tushar',
+      email: 'tushar@quickcart.demo',
       role: 'owner',
     },
     {
-      _id: 'user_alex',
+      _id: 'user_ayush',
       businessId,
-      name: 'Alex Chen',
-      email: 'alex@quickcart.demo',
+      name: 'Ayush',
+      email: 'ayush@quickcart.demo',
       role: 'member',
     },
   ];
@@ -591,7 +591,7 @@ export async function processQuickCartOrder(event: { orderId: string; paymentInt
       _id: 'audit_1',
       businessId,
       actorId: ownerId,
-      actorName: 'Sarah Lin (Owner)',
+      actorName: 'Tushar (Owner)',
       action: 'PROCESS_CREATED',
       entityId: processId,
       entityType: 'process',
@@ -602,7 +602,7 @@ export async function processQuickCartOrder(event: { orderId: string; paymentInt
       _id: 'audit_2',
       businessId,
       actorId: ownerId,
-      actorName: 'Sarah Lin (Owner)',
+      actorName: 'Tushar (Owner)',
       action: 'WORKFLOW_APPROVED',
       entityId: defaultWorkflow._id,
       entityType: 'workflow',
