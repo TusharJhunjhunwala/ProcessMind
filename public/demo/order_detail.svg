@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#0f172a; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="windowGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Desktop Backdrop -->
+  <rect width="960" height="540" fill="#0f172a"/>
+  
+  <!-- App Window Container -->
+  <g filter="url(#shadow)">
+    <rect x="20" y="20" width="920" height="500" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    
+    <!-- Titlebar -->
+    <rect x="20" y="20" width="920" height="42" rx="10" fill="#1e3a5f"/>
+    <rect x="20" y="52" width="920" height="10" fill="#1e3a5f"/>
+    
+    <!-- Window controls -->
+    <circle cx="45" cy="41" r="6" fill="#ef4444"/>
+    <circle cx="65" cy="41" r="6" fill="#f59e0b"/>
+    <circle cx="85" cy="41" r="6" fill="#10b981"/>
+    
+    <!-- App Badge & Window Title -->
+    <text x="120" y="46" fill="#f8fafc" font-size="13" font-weight="600">Shopify Admin</text>
+    <text x="320" y="46" fill="#94a3b8" font-size="12">Order #9831 · Customer & Line Items</text>
+    
+    
+
+    <!-- Content Area -->
+    <g transform="translate(20, 62)">
+      
+      <rect x="0" y="0" width="920" height="458" fill="#1e293b"/>
+      <text x="40" y="45" fill="#f8fafc" font-size="22" font-weight="700">Order #9831</text>
+      <text x="210" y="45" fill="#34d399" font-size="13" font-weight="600">● Paid via Stripe</text>
+
+      <!-- Left Card: Items -->
+      <rect x="40" y="70" width="540" height="260" rx="8" fill="#0f172a" stroke="#334155"/>
+      <text x="65" y="105" fill="#f8fafc" font-size="15" font-weight="600">Line Items (2)</text>
+      
+      <rect x="65" y="125" width="490" height="50" rx="6" fill="#1e293b"/>
+      <text x="85" y="155" fill="#ffffff" font-size="13">Wireless Studio Headphones Pro</text>
+      <text x="410" y="155" fill="#94a3b8" font-size="12">Qty: 1</text>
+      <text x="480" y="155" fill="#34d399" font-size="13" font-weight="600">$120.00</text>
+
+      <rect x="65" y="185" width="490" height="50" rx="6" fill="#1e293b"/>
+      <text x="85" y="215" fill="#ffffff" font-size="13">Velour Replacement Ear Cushions</text>
+      <text x="410" y="215" fill="#94a3b8" font-size="12">Qty: 1</text>
+      <text x="480" y="215" fill="#34d399" font-size="13" font-weight="600">$22.50</text>
+
+      <text x="410" y="275" fill="#94a3b8" font-size="13">Total Amount:</text>
+      <text x="500" y="275" fill="#38bdf8" font-size="16" font-weight="700">$142.50</text>
+
+      <!-- Right Card: Customer -->
+      <rect x="600" y="70" width="280" height="260" rx="8" fill="#0f172a" stroke="#334155"/>
+      <text x="625" y="105" fill="#f8fafc" font-size="15" font-weight="600">Customer Details</text>
+      <text x="625" y="140" fill="#ffffff" font-size="13" font-weight="600">David Kramer</text>
+      <text x="625" y="165" fill="#38bdf8" font-size="12">david.kramer@techstudio.com</text>
+      <text x="625" y="195" fill="#94a3b8" font-size="12">Shipping Address:</text>
+      <text x="625" y="220" fill="#cbd5e1" font-size="12">742 Market St, Suite 400</text>
+      <text x="625" y="240" fill="#cbd5e1" font-size="12">San Francisco, CA 94103</text>
+      
+    </g>
+  </g>
+</svg>

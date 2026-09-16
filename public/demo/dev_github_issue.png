@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#0f172a; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="540" fill="#0f172a"/>
+  
+  <g filter="url(#shadow)">
+    <rect x="20" y="20" width="920" height="500" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect x="20" y="20" width="920" height="42" rx="10" fill="#1e293b"/>
+    <rect x="20" y="52" width="920" height="10" fill="#1e293b"/>
+    
+    <circle cx="45" cy="41" r="6" fill="#ef4444"/>
+    <circle cx="65" cy="41" r="6" fill="#f59e0b"/>
+    <circle cx="85" cy="41" r="6" fill="#10b981"/>
+    
+    <text x="120" y="46" fill="#f8fafc" font-size="13" font-weight="600">GitHub.com / quickcart/store-automations</text>
+    <text x="320" y="46" fill="#94a3b8" font-size="12">Issue #402 · Stripe Webhook timeout on large cart checkout</text>
+    
+    
+
+    <g transform="translate(20, 62)">
+      
+      <rect x="0" y="0" width="920" height="458" fill="#0f172a"/>
+      <text x="40" y="45" fill="#f8fafc" font-size="20" font-weight="700">Stripe Webhook timeout on 10+ items cart #402</text>
+      <rect x="40" y="65" width="80" height="24" rx="4" fill="#166534"/>
+      <text x="52" y="81" fill="#4ade80" font-size="11" font-weight="700">Open</text>
+      <text x="135" y="81" fill="#94a3b8" font-size="12">opened 2 hours ago by alex-chen · 4 comments</text>
+
+      <rect x="40" y="105" width="840" height="280" rx="8" fill="#1e293b" stroke="#334155"/>
+      <text x="65" y="140" fill="#e2e8f0" font-size="13" font-weight="600">Problem Description:</text>
+      <text x="65" y="170" fill="#cbd5e1" font-size="12">When a customer checks out with more than 10 line items, QuickBooks Online API</text>
+      <text x="65" y="195" fill="#cbd5e1" font-size="12">invoice creation takes > 4.8s, triggering a Stripe webhook retry loop.</text>
+      <text x="65" y="230" fill="#fca5a5" font-size="12" font-family="monospace">Error: ETIMEDOUT POST https://quickbooks.api.intuit.com/v3/company/invoice</text>
+
+      <rect x="65" y="270" width="220" height="36" rx="6" fill="#4f46e5"/>
+      <text x="90" y="293" fill="#ffffff" font-size="12" font-weight="600">Open in VS Code Workspace</text>
+      
+    </g>
+  </g>
+</svg>

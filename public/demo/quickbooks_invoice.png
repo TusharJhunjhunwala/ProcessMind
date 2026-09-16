@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#0f172a; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="windowGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Desktop Backdrop -->
+  <rect width="960" height="540" fill="#0f172a"/>
+  
+  <!-- App Window Container -->
+  <g filter="url(#shadow)">
+    <rect x="20" y="20" width="920" height="500" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    
+    <!-- Titlebar -->
+    <rect x="20" y="20" width="920" height="42" rx="10" fill="#059669"/>
+    <rect x="20" y="52" width="920" height="10" fill="#059669"/>
+    
+    <!-- Window controls -->
+    <circle cx="45" cy="41" r="6" fill="#ef4444"/>
+    <circle cx="65" cy="41" r="6" fill="#f59e0b"/>
+    <circle cx="85" cy="41" r="6" fill="#10b981"/>
+    
+    <!-- App Badge & Window Title -->
+    <text x="120" y="46" fill="#f8fafc" font-size="13" font-weight="600">QuickBooks Online</text>
+    <text x="320" y="46" fill="#94a3b8" font-size="12">Invoice #INV-2026-1049 · Draft & Tax Applied</text>
+    
+    
+
+    <!-- Content Area -->
+    <g transform="translate(20, 62)">
+      
+      <rect x="0" y="0" width="920" height="458" fill="#1e293b"/>
+      <rect x="40" y="30" width="840" height="380" rx="8" fill="#0f172a" stroke="#334155"/>
+
+      <text x="70" y="70" fill="#f8fafc" font-size="20" font-weight="700">QuickBooks Online — Create Invoice</text>
+      
+      <!-- Form fields -->
+      <rect x="70" y="95" width="230" height="45" rx="4" fill="#1e293b" stroke="#475569"/>
+      <text x="85" y="112" fill="#94a3b8" font-size="10">CUSTOMER</text>
+      <text x="85" y="132" fill="#ffffff" font-size="12" font-weight="600">David Kramer (QC-441)</text>
+
+      <rect x="330" y="95" width="230" height="45" rx="4" fill="#1e293b" stroke="#475569"/>
+      <text x="345" y="112" fill="#94a3b8" font-size="10">INVOICE DATE</text>
+      <text x="345" y="132" fill="#ffffff" font-size="12">2026-08-10</text>
+
+      <rect x="590" y="95" width="230" height="45" rx="4" fill="#1e293b" stroke="#475569"/>
+      <text x="605" y="112" fill="#94a3b8" font-size="10">INVOICE NO.</text>
+      <text x="605" y="132" fill="#38bdf8" font-size="12" font-weight="600">INV-2026-1049</text>
+
+      <!-- Table -->
+      <rect x="70" y="160" width="750" height="130" rx="4" fill="#1e293b"/>
+      <text x="90" y="190" fill="#e2e8f0" font-size="12">1. Wireless Studio Headphones Pro — $120.00</text>
+      <text x="90" y="220" fill="#e2e8f0" font-size="12">2. Replacement Ear Cushions — $22.50</text>
+      <line x1="70" y1="240" x2="820" y2="240" stroke="#334155" stroke-width="1"/>
+      <text x="620" y="270" fill="#94a3b8" font-size="13">Total Due: </text>
+      <text x="710" y="270" fill="#34d399" font-size="18" font-weight="700">$142.50</text>
+
+      <!-- Save Button -->
+      <rect x="710" y="320" width="110" height="38" rx="6" fill="#10b981"/>
+      <text x="735" y="344" fill="#ffffff" font-size="13" font-weight="700">Save PDF</text>
+      
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,4197 @@
+{
+  "businesses": [
+    {
+      "_id": "biz_quickcart",
+      "name": "QuickCart Online Store",
+      "ownerId": "user_sarah",
+      "plan": "business",
+      "createdAt": "2026-08-01T10:00:00.000Z"
+    }
+  ],
+  "users": [
+    {
+      "_id": "user_sarah",
+      "businessId": "biz_quickcart",
+      "name": "Sarah Lin",
+      "email": "sarah@quickcart.demo",
+      "role": "owner"
+    },
+    {
+      "_id": "user_alex",
+      "businessId": "biz_quickcart",
+      "name": "Alex Chen",
+      "email": "alex@quickcart.demo",
+      "role": "member"
+    }
+  ],
+  "applications": [
+    {
+      "_id": "app_shopify",
+      "businessId": "biz_quickcart",
+      "name": "Shopify Store",
+      "type": "ecommerce",
+      "connectionStatus": "connected",
+      "config": {
+        "storeUrl": "quickcart-demo.myshopify.com",
+        "apiVersion": "2026-04"
+      },
+      "lastSyncedAt": "2026-09-16T12:19:03.148Z"
+    },
+    {
+      "_id": "app_stripe",
+      "businessId": "biz_quickcart",
+      "name": "Stripe Payments",
+      "type": "custom_api",
+      "connectionStatus": "connected",
+      "config": {
+        "liveMode": false,
+        "webhooksActive": true
+      },
+      "lastSyncedAt": "2026-09-16T12:19:03.148Z"
+    },
+    {
+      "_id": "app_quickbooks",
+      "businessId": "biz_quickcart",
+      "name": "QuickBooks Online",
+      "type": "accounting",
+      "connectionStatus": "connected",
+      "config": {
+        "companyId": "QC-98421"
+      },
+      "lastSyncedAt": "2026-09-16T12:19:03.148Z"
+    },
+    {
+      "_id": "app_sheets",
+      "businessId": "biz_quickcart",
+      "name": "Google Sheets (Orders DB)",
+      "type": "spreadsheet",
+      "connectionStatus": "connected",
+      "config": {
+        "sheetId": "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms"
+      },
+      "lastSyncedAt": "2026-09-16T12:19:03.148Z"
+    },
+    {
+      "_id": "app_sendgrid",
+      "businessId": "biz_quickcart",
+      "name": "SendGrid Email API",
+      "type": "email",
+      "connectionStatus": "connected",
+      "config": {
+        "fromAddress": "orders@quickcart.demo"
+      },
+      "lastSyncedAt": "2026-09-16T12:19:03.148Z"
+    },
+    {
+      "_id": "app_github",
+      "businessId": "biz_quickcart",
+      "name": "GitHub Webhook Connector",
+      "type": "developer",
+      "connectionStatus": "connected",
+      "config": {
+        "repo": "quickcart/ecommerce-automation-scripts",
+        "branch": "main"
+      },
+      "lastSyncedAt": "2026-09-16T12:19:03.148Z"
+    },
+    {
+      "_id": "app_1789561177137",
+      "businessId": "biz_quickcart",
+      "name": "Sandbox QuickCart API",
+      "type": "custom_api",
+      "connectionStatus": "connected",
+      "config": {
+        "authType": "Bearer"
+      },
+      "lastSyncedAt": "2026-09-16T12:19:37.137Z"
+    }
+  ],
+  "processes": [
+    {
+      "_id": "proc_quickcart_order",
+      "businessId": "biz_quickcart",
+      "name": "Order Processing & Fulfillment",
+      "description": "Autonomous multi-app pipeline: Shopify order ingestion, Stripe payment confirmation, QuickBooks invoicing, Google Sheets ledger update, and customer email notification.",
+      "status": "drift_detected",
+      "baselineVersionId": "ver_1789561177094",
+      "currentVersionId": "ver_1789561177094",
+      "recordingUrl": "/demo/quickcart_order_flow.mp4",
+      "recordingDurationSec": 58,
+      "sampleVideoType": "quickcart_orders",
+      "createdAt": "2026-08-10T14:00:00.000Z",
+      "updatedAt": "2026-08-28T16:20:00.000Z"
+    },
+    {
+      "_id": "proc_accounting_firm",
+      "businessId": "biz_quickcart",
+      "name": "Client Invoice Entry & Accounting (Example B)",
+      "description": "Automated invoice extraction and bookkeeping: ingests client PDF invoices from email, queries QuickBooks vendor profiles, logs bill items, updates master ledger, and dispatches confirmation.",
+      "status": "verified",
+      "baselineVersionId": "ver_accounting_v1_0",
+      "currentVersionId": "ver_accounting_v1_0",
+      "recordingUrl": "/demo/accounting_invoices.mp4",
+      "recordingDurationSec": 45,
+      "sampleVideoType": "accounting_invoices",
+      "createdAt": "2026-08-15T11:00:00.000Z",
+      "updatedAt": "2026-08-15T11:30:00.000Z"
+    },
+    {
+      "_id": "proc_developer_bugfix",
+      "businessId": "biz_quickcart",
+      "name": "Developer Bug Investigation & PR (Example E)",
+      "description": "Developer Tools context automation: connects visible developer actions to GitHub Issues, Git repositories, VS Code source files, Jest test runner, and automated Pull Request creation.",
+      "status": "verified",
+      "baselineVersionId": "ver_developer_v1_0",
+      "currentVersionId": "ver_developer_v1_0",
+      "recordingUrl": "/demo/dev_bugfix.mp4",
+      "recordingDurationSec": 52,
+      "sampleVideoType": "dev_bugfix",
+      "createdAt": "2026-08-20T16:00:00.000Z",
+      "updatedAt": "2026-08-20T16:45:00.000Z"
+    },
+    {
+      "_id": "proc_1789561279532",
+      "businessId": "biz_quickcart",
+      "name": "QuickCart with Employee Excel Shadow Drift",
+      "description": "Observed 2 weeks later. An employee introduces a manual Excel verification step. Drift Agent flags deviation with frame evidence.",
+      "status": "awaiting_approval",
+      "sampleVideoType": "quickcart_drift",
+      "recordingUrl": "/demo/quickcart_order_flow_drift.mp4",
+      "recordingDurationSec": 64,
+      "createdAt": "2026-09-16T12:21:19.532Z",
+      "updatedAt": "2026-09-16T12:21:19.532Z",
+      "baselineVersionId": "ver_1789561279556",
+      "currentVersionId": "ver_1789561279556"
+    }
+  ],
+  "processVersions": [
+    {
+      "_id": "ver_quickcart_v1_0",
+      "processId": "proc_quickcart_order",
+      "version": "v1.0 (Baseline)",
+      "isBaseline": true,
+      "createdAt": "2026-08-10T14:30:00.000Z",
+      "nodes": [
+        {
+          "id": "node_1",
+          "label": "New Order Notification",
+          "application": "Shopify Store",
+          "action": "Review incoming customer order notification in dashboard inbox",
+          "timestamp": "00:04",
+          "timestampSec": 4,
+          "screenshot": "/demo/order_inbox.png",
+          "confidence": 0.98,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /api/webhooks/shopify/orders/create",
+          "suggestedTools": [
+            "Shopify Webhooks",
+            "REST Admin API"
+          ],
+          "parameters": {
+            "event": "orders/create",
+            "payloadId": "order_9831"
+          },
+          "notes": "Can be replaced 100% with direct Shopify webhook subscription"
+        },
+        {
+          "id": "node_2",
+          "label": "Open Store Dashboard",
+          "application": "Shopify Store",
+          "action": "Navigate to Orders view and open pending Order #9831",
+          "timestamp": "00:11",
+          "timestampSec": 11,
+          "screenshot": "/demo/order_detail.png",
+          "confidence": 0.96,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /admin/api/2026-04/orders/9831.json",
+          "suggestedTools": [
+            "Shopify SDK"
+          ],
+          "parameters": {
+            "orderId": "9831"
+          },
+          "notes": "API provides line items, customer name, shipping address immediately"
+        },
+        {
+          "id": "node_3",
+          "label": "Check Customer Details & Risk",
+          "application": "Shopify Store",
+          "action": "Inspect customer fraud risk score and address validation flags",
+          "timestamp": "00:19",
+          "timestampSec": 19,
+          "screenshot": "/demo/risk_assessment.png",
+          "confidence": 0.94,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /admin/api/2026-04/orders/9831/risks.json",
+          "suggestedTools": [
+            "Shopify Fraud Analysis API"
+          ],
+          "parameters": {
+            "threshold": "low"
+          },
+          "notes": "Rule: If risk recommendation is \"accept\", proceed automatically; if \"investigate\", route to human"
+        },
+        {
+          "id": "node_4",
+          "label": "Check Payment Status",
+          "application": "Stripe Payments",
+          "action": "Verify transaction capture ID and 3D Secure verification status",
+          "timestamp": "00:26",
+          "timestampSec": 26,
+          "screenshot": "/demo/stripe_payment.png",
+          "confidence": 0.99,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /v1/payment_intents/pi_3N92jkdlsw92",
+          "suggestedTools": [
+            "Stripe Node SDK"
+          ],
+          "parameters": {
+            "status": "succeeded"
+          },
+          "notes": "Payment confirmed via payment_intent.succeeded event"
+        },
+        {
+          "id": "node_5",
+          "label": "Create Invoice in QuickBooks",
+          "application": "QuickBooks Online",
+          "action": "Enter item SKU, price, sales tax breakdown and generate invoice PDF",
+          "timestamp": "00:37",
+          "timestampSec": 37,
+          "screenshot": "/demo/quickbooks_invoice.png",
+          "confidence": 0.95,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /v3/company/QC-98421/invoice",
+          "suggestedTools": [
+            "Intuit QuickBooks API"
+          ],
+          "parameters": {
+            "customerRef": "QC-Cust-441",
+            "autoSend": "false"
+          },
+          "notes": "Replaces 4 minutes of manual bookkeeping data entry per order"
+        },
+        {
+          "id": "node_6",
+          "label": "Update Master Order Sheet",
+          "application": "Google Sheets",
+          "action": "Append order row to Logistics Tracking spreadsheet",
+          "timestamp": "00:48",
+          "timestampSec": 48,
+          "screenshot": "/demo/google_sheet.png",
+          "confidence": 0.97,
+          "automationMethod": "api",
+          "apiEndpoint": "POST https://sheets.googleapis.com/v4/spreadsheets/1Bxi.../values:append",
+          "suggestedTools": [
+            "Google Sheets API v4"
+          ],
+          "parameters": {
+            "range": "Orders!A:H",
+            "valueInputOption": "USER_ENTERED"
+          },
+          "notes": "Appends [Date, Order#, Customer, Amount, Status, TrackingID]"
+        },
+        {
+          "id": "node_7",
+          "label": "Send Confirmation Email",
+          "application": "SendGrid Email API",
+          "action": "Trigger transactional email with PDF invoice attachment and tracking link",
+          "timestamp": "00:55",
+          "timestampSec": 55,
+          "screenshot": "/demo/email_confirm.png",
+          "confidence": 0.98,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /v3/mail/send",
+          "suggestedTools": [
+            "SendGrid Mailer",
+            "Postmark"
+          ],
+          "parameters": {
+            "template_id": "d-98427189a0"
+          },
+          "notes": "Includes order summary and delivery window details"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1_2",
+          "source": "node_1",
+          "target": "node_2",
+          "label": "Order ID"
+        },
+        {
+          "id": "e2_3",
+          "source": "node_2",
+          "target": "node_3",
+          "label": "Customer ID"
+        },
+        {
+          "id": "e3_4",
+          "source": "node_3",
+          "target": "node_4",
+          "label": "Payment Intent"
+        },
+        {
+          "id": "e4_5",
+          "source": "node_4",
+          "target": "node_5",
+          "label": "Line Items"
+        },
+        {
+          "id": "e5_6",
+          "source": "node_5",
+          "target": "node_6",
+          "label": "Invoice Num"
+        },
+        {
+          "id": "e6_7",
+          "source": "node_6",
+          "target": "node_7",
+          "label": "Tracking & Mail"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev_1",
+          "frameId": "frame_04",
+          "timestamp": "00:04",
+          "screenshotUrl": "/demo/order_inbox.png",
+          "detectedElements": [
+            {
+              "label": "Shopify Admin Sidebar",
+              "box": [
+                0,
+                0,
+                100,
+                20
+              ],
+              "confidence": 0.99
+            },
+            {
+              "label": "Unfulfilled Order #9831 Row",
+              "box": [
+                22,
+                22,
+                34,
+                98
+              ],
+              "confidence": 0.97
+            }
+          ],
+          "activeWindow": "Google Chrome - Shopify Admin - Orders",
+          "ocrText": [
+            "Orders",
+            "Unfulfilled",
+            "#9831",
+            "David K.",
+            "$142.50",
+            "Paid"
+          ]
+        },
+        {
+          "id": "ev_2",
+          "frameId": "frame_11",
+          "timestamp": "00:11",
+          "screenshotUrl": "/demo/order_detail.png",
+          "detectedElements": [
+            {
+              "label": "Order Summary Card",
+              "box": [
+                15,
+                20,
+                70,
+                75
+              ],
+              "confidence": 0.98
+            },
+            {
+              "label": "Customer Contact Info",
+              "box": [
+                15,
+                78,
+                45,
+                98
+              ],
+              "confidence": 0.96
+            }
+          ],
+          "activeWindow": "Google Chrome - Shopify Admin - Order #9831",
+          "ocrText": [
+            "Order #9831",
+            "Items: 2",
+            "Wireless Headphones Pro x1",
+            "Replacement Ear Cushions x1"
+          ]
+        },
+        {
+          "id": "ev_4",
+          "frameId": "frame_26",
+          "timestamp": "00:26",
+          "screenshotUrl": "/demo/stripe_payment.png",
+          "detectedElements": [
+            {
+              "label": "Stripe Payment Intent Card",
+              "box": [
+                20,
+                25,
+                65,
+                85
+              ],
+              "confidence": 0.99
+            }
+          ],
+          "activeWindow": "Google Chrome - Stripe Dashboard",
+          "ocrText": [
+            "Payment Intent: pi_3N92jkdlsw92",
+            "Amount: $142.50",
+            "Status: Succeeded",
+            "Risk: Normal"
+          ]
+        },
+        {
+          "id": "ev_5",
+          "frameId": "frame_37",
+          "timestamp": "00:37",
+          "screenshotUrl": "/demo/quickbooks_invoice.png",
+          "detectedElements": [
+            {
+              "label": "QuickBooks Invoice Form",
+              "box": [
+                10,
+                15,
+                90,
+                85
+              ],
+              "confidence": 0.97
+            }
+          ],
+          "activeWindow": "Google Chrome - QuickBooks Online - Invoicing",
+          "ocrText": [
+            "Invoice #INV-2026-1049",
+            "Subtotal: $130.00",
+            "Tax: $12.50",
+            "Total: $142.50"
+          ]
+        }
+      ]
+    },
+    {
+      "_id": "ver_quickcart_v1_1_drifted",
+      "processId": "proc_quickcart_order",
+      "version": "v1.1 (Observed Drift)",
+      "isBaseline": false,
+      "createdAt": "2026-08-28T16:15:00.000Z",
+      "nodes": [
+        {
+          "id": "node_1",
+          "label": "New Order Notification",
+          "application": "Shopify Store",
+          "action": "Review incoming customer order notification in dashboard inbox",
+          "timestamp": "00:04",
+          "timestampSec": 4,
+          "screenshot": "/demo/order_inbox.png",
+          "confidence": 0.98,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /api/webhooks/shopify/orders/create",
+          "suggestedTools": [
+            "Shopify Webhooks",
+            "REST Admin API"
+          ],
+          "parameters": {
+            "event": "orders/create",
+            "payloadId": "order_9831"
+          },
+          "notes": "Can be replaced 100% with direct Shopify webhook subscription"
+        },
+        {
+          "id": "node_2",
+          "label": "Open Store Dashboard",
+          "application": "Shopify Store",
+          "action": "Navigate to Orders view and open pending Order #9831",
+          "timestamp": "00:11",
+          "timestampSec": 11,
+          "screenshot": "/demo/order_detail.png",
+          "confidence": 0.96,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /admin/api/2026-04/orders/9831.json",
+          "suggestedTools": [
+            "Shopify SDK"
+          ],
+          "parameters": {
+            "orderId": "9831"
+          },
+          "notes": "API provides line items, customer name, shipping address immediately"
+        },
+        {
+          "id": "node_3",
+          "label": "Check Customer Details & Risk",
+          "application": "Shopify Store",
+          "action": "Inspect customer fraud risk score and address validation flags",
+          "timestamp": "00:19",
+          "timestampSec": 19,
+          "screenshot": "/demo/risk_assessment.png",
+          "confidence": 0.94,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /admin/api/2026-04/orders/9831/risks.json",
+          "suggestedTools": [
+            "Shopify Fraud Analysis API"
+          ],
+          "parameters": {
+            "threshold": "low"
+          },
+          "notes": "Rule: If risk recommendation is \"accept\", proceed automatically; if \"investigate\", route to human"
+        },
+        {
+          "id": "node_4",
+          "label": "Check Payment Status",
+          "application": "Stripe Payments",
+          "action": "Verify transaction capture ID and 3D Secure verification status",
+          "timestamp": "00:26",
+          "timestampSec": 26,
+          "screenshot": "/demo/stripe_payment.png",
+          "confidence": 0.99,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /v1/payment_intents/pi_3N92jkdlsw92",
+          "suggestedTools": [
+            "Stripe Node SDK"
+          ],
+          "parameters": {
+            "status": "succeeded"
+          },
+          "notes": "Payment confirmed via payment_intent.succeeded event"
+        },
+        {
+          "id": "node_drift_excel",
+          "label": "Excel Secondary Audit Check (UNAUTHORIZED STEP)",
+          "application": "Microsoft Excel / Desktop Sheet",
+          "action": "Manual cross-referencing against internal discount approval spreadsheet before invoice generation",
+          "timestamp": "00:31",
+          "timestampSec": 31,
+          "screenshot": "/demo/excel_drift.png",
+          "confidence": 0.96,
+          "automationMethod": "human_review",
+          "suggestedTools": [
+            "Excel Spreadsheet Reader"
+          ],
+          "notes": "Employee manually opened Excel to verify a promotional discount code. Adds 2m 40s manual latency."
+        },
+        {
+          "id": "node_5",
+          "label": "Create Invoice in QuickBooks",
+          "application": "QuickBooks Online",
+          "action": "Enter item SKU, price, sales tax breakdown and generate invoice PDF",
+          "timestamp": "00:37",
+          "timestampSec": 37,
+          "screenshot": "/demo/quickbooks_invoice.png",
+          "confidence": 0.95,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /v3/company/QC-98421/invoice",
+          "suggestedTools": [
+            "Intuit QuickBooks API"
+          ],
+          "parameters": {
+            "customerRef": "QC-Cust-441",
+            "autoSend": "false"
+          },
+          "notes": "Replaces 4 minutes of manual bookkeeping data entry per order"
+        },
+        {
+          "id": "node_6",
+          "label": "Update Master Order Sheet",
+          "application": "Google Sheets",
+          "action": "Append order row to Logistics Tracking spreadsheet",
+          "timestamp": "00:48",
+          "timestampSec": 48,
+          "screenshot": "/demo/google_sheet.png",
+          "confidence": 0.97,
+          "automationMethod": "api",
+          "apiEndpoint": "POST https://sheets.googleapis.com/v4/spreadsheets/1Bxi.../values:append",
+          "suggestedTools": [
+            "Google Sheets API v4"
+          ],
+          "parameters": {
+            "range": "Orders!A:H",
+            "valueInputOption": "USER_ENTERED"
+          },
+          "notes": "Appends [Date, Order#, Customer, Amount, Status, TrackingID]"
+        },
+        {
+          "id": "node_7",
+          "label": "Send Confirmation Email",
+          "application": "SendGrid Email API",
+          "action": "Trigger transactional email with PDF invoice attachment and tracking link",
+          "timestamp": "00:55",
+          "timestampSec": 55,
+          "screenshot": "/demo/email_confirm.png",
+          "confidence": 0.98,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /v3/mail/send",
+          "suggestedTools": [
+            "SendGrid Mailer",
+            "Postmark"
+          ],
+          "parameters": {
+            "template_id": "d-98427189a0"
+          },
+          "notes": "Includes order summary and delivery window details"
+        }
+      ],
+      "edges": [
+        {
+          "id": "ed_1",
+          "source": "node_1",
+          "target": "node_2"
+        },
+        {
+          "id": "ed_2",
+          "source": "node_2",
+          "target": "node_3"
+        },
+        {
+          "id": "ed_3",
+          "source": "node_3",
+          "target": "node_4"
+        },
+        {
+          "id": "ed_drift_in",
+          "source": "node_4",
+          "target": "node_drift_excel",
+          "label": "Drift Insert"
+        },
+        {
+          "id": "ed_drift_out",
+          "source": "node_drift_excel",
+          "target": "node_5",
+          "label": "Manual Verification"
+        },
+        {
+          "id": "ed_5",
+          "source": "node_5",
+          "target": "node_6"
+        },
+        {
+          "id": "ed_6",
+          "source": "node_6",
+          "target": "node_7"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev_1",
+          "frameId": "frame_04",
+          "timestamp": "00:04",
+          "screenshotUrl": "/demo/order_inbox.png",
+          "detectedElements": [
+            {
+              "label": "Shopify Admin Sidebar",
+              "box": [
+                0,
+                0,
+                100,
+                20
+              ],
+              "confidence": 0.99
+            },
+            {
+              "label": "Unfulfilled Order #9831 Row",
+              "box": [
+                22,
+                22,
+                34,
+                98
+              ],
+              "confidence": 0.97
+            }
+          ],
+          "activeWindow": "Google Chrome - Shopify Admin - Orders",
+          "ocrText": [
+            "Orders",
+            "Unfulfilled",
+            "#9831",
+            "David K.",
+            "$142.50",
+            "Paid"
+          ]
+        },
+        {
+          "id": "ev_2",
+          "frameId": "frame_11",
+          "timestamp": "00:11",
+          "screenshotUrl": "/demo/order_detail.png",
+          "detectedElements": [
+            {
+              "label": "Order Summary Card",
+              "box": [
+                15,
+                20,
+                70,
+                75
+              ],
+              "confidence": 0.98
+            },
+            {
+              "label": "Customer Contact Info",
+              "box": [
+                15,
+                78,
+                45,
+                98
+              ],
+              "confidence": 0.96
+            }
+          ],
+          "activeWindow": "Google Chrome - Shopify Admin - Order #9831",
+          "ocrText": [
+            "Order #9831",
+            "Items: 2",
+            "Wireless Headphones Pro x1",
+            "Replacement Ear Cushions x1"
+          ]
+        },
+        {
+          "id": "ev_4",
+          "frameId": "frame_26",
+          "timestamp": "00:26",
+          "screenshotUrl": "/demo/stripe_payment.png",
+          "detectedElements": [
+            {
+              "label": "Stripe Payment Intent Card",
+              "box": [
+                20,
+                25,
+                65,
+                85
+              ],
+              "confidence": 0.99
+            }
+          ],
+          "activeWindow": "Google Chrome - Stripe Dashboard",
+          "ocrText": [
+            "Payment Intent: pi_3N92jkdlsw92",
+            "Amount: $142.50",
+            "Status: Succeeded",
+            "Risk: Normal"
+          ]
+        },
+        {
+          "id": "ev_5",
+          "frameId": "frame_37",
+          "timestamp": "00:37",
+          "screenshotUrl": "/demo/quickbooks_invoice.png",
+          "detectedElements": [
+            {
+              "label": "QuickBooks Invoice Form",
+              "box": [
+                10,
+                15,
+                90,
+                85
+              ],
+              "confidence": 0.97
+            }
+          ],
+          "activeWindow": "Google Chrome - QuickBooks Online - Invoicing",
+          "ocrText": [
+            "Invoice #INV-2026-1049",
+            "Subtotal: $130.00",
+            "Tax: $12.50",
+            "Total: $142.50"
+          ]
+        },
+        {
+          "id": "ev_drift_14",
+          "frameId": "frame_14",
+          "timestamp": "00:31",
+          "screenshotUrl": "/demo/excel_drift.png",
+          "detectedElements": [
+            {
+              "label": "Microsoft Excel - DiscountCodes_2026.xlsx",
+              "box": [
+                5,
+                5,
+                95,
+                95
+              ],
+              "confidence": 0.98
+            },
+            {
+              "label": "Row 42: \"SUMMER15 - 15% Off VIP\"",
+              "box": [
+                40,
+                10,
+                50,
+                80
+              ],
+              "confidence": 0.95
+            }
+          ],
+          "activeWindow": "Microsoft Excel - DiscountCodes_2026.xlsx",
+          "ocrText": [
+            "DiscountCodes_2026.xlsx",
+            "Code",
+            "Discount",
+            "Approved By",
+            "SUMMER15",
+            "15%",
+            "Manager"
+          ]
+        }
+      ]
+    },
+    {
+      "_id": "ver_accounting_v1_0",
+      "processId": "proc_accounting_firm",
+      "version": "v1.0 (Baseline)",
+      "isBaseline": true,
+      "createdAt": "2026-08-15T11:00:00.000Z",
+      "nodes": [
+        {
+          "id": "acc_node_1",
+          "label": "Receive Client Invoice PDF",
+          "application": "Thunderbird / Gmail Client",
+          "action": "Ingest attached invoice_apex_881.pdf from billing@apexconsulting.com",
+          "timestamp": "00:05",
+          "timestampSec": 5,
+          "screenshot": "/demo/acc_invoice_email.png",
+          "confidence": 0.99,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /v1/inbox/attachments/invoice_apex_881.pdf",
+          "suggestedTools": [
+            "Email Parser SDK"
+          ],
+          "notes": "Direct email attachment parser extracts vendor and PDF bytes"
+        },
+        {
+          "id": "acc_node_2",
+          "label": "Open QuickBooks Accounting",
+          "application": "QuickBooks Online",
+          "action": "Launch accounting vendor ledger view",
+          "timestamp": "00:12",
+          "timestampSec": 12,
+          "screenshot": "/demo/quickbooks_invoice.png",
+          "confidence": 0.96,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /v3/company/QC-98421/vendor",
+          "suggestedTools": [
+            "QuickBooks API"
+          ],
+          "notes": "API provides vendor list directly"
+        },
+        {
+          "id": "acc_node_3",
+          "label": "Find Client Record: Apex Consulting",
+          "application": "QuickBooks Online",
+          "action": "Query vendor record matching \"Apex Consulting LLC\"",
+          "timestamp": "00:18",
+          "timestampSec": 18,
+          "screenshot": "/demo/quickbooks_invoice.png",
+          "confidence": 0.97,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /v3/company/QC-98421/query?select=* from Vendor where DisplayName='Apex Consulting LLC'",
+          "suggestedTools": [
+            "QuickBooks Query API"
+          ],
+          "parameters": {
+            "vendor": "Apex Consulting LLC"
+          }
+        },
+        {
+          "id": "acc_node_4",
+          "label": "Enter Invoice Line Items ($3,450.00)",
+          "application": "QuickBooks Online",
+          "action": "Enter line item description \"Monthly Retainer July 2026\", amount $3,450.00",
+          "timestamp": "00:28",
+          "timestampSec": 28,
+          "screenshot": "/demo/quickbooks_invoice.png",
+          "confidence": 0.98,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /v3/company/QC-98421/bill",
+          "suggestedTools": [
+            "QuickBooks Bill API"
+          ],
+          "parameters": {
+            "amount": "3450.00",
+            "term": "Net 30"
+          }
+        },
+        {
+          "id": "acc_node_5",
+          "label": "Verify Amount & Sales Tax",
+          "application": "QuickBooks Online",
+          "action": "Verify subtotal $3,450.00 matches attached PDF total",
+          "timestamp": "00:34",
+          "timestampSec": 34,
+          "screenshot": "/demo/quickbooks_invoice.png",
+          "confidence": 0.99,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /v3/company/QC-98421/bill/validate",
+          "suggestedTools": [
+            "Tax Calculation Engine"
+          ]
+        },
+        {
+          "id": "acc_node_6",
+          "label": "Save Ledger Record",
+          "application": "Google Sheets",
+          "action": "Update Accounts Payable master register",
+          "timestamp": "00:41",
+          "timestampSec": 41,
+          "screenshot": "/demo/google_sheet.png",
+          "confidence": 0.97,
+          "automationMethod": "api",
+          "apiEndpoint": "POST https://sheets.googleapis.com/v4/spreadsheets/ledger/values:append"
+        },
+        {
+          "id": "acc_node_7",
+          "label": "Send Receipt Confirmation",
+          "application": "SendGrid Email API",
+          "action": "Email billing@apexconsulting.com acknowledging bill receipt",
+          "timestamp": "00:45",
+          "timestampSec": 45,
+          "screenshot": "/demo/email_confirm.png",
+          "confidence": 0.98,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /v3/mail/send"
+        }
+      ],
+      "edges": [
+        {
+          "id": "ea_1",
+          "source": "acc_node_1",
+          "target": "acc_node_2"
+        },
+        {
+          "id": "ea_2",
+          "source": "acc_node_2",
+          "target": "acc_node_3"
+        },
+        {
+          "id": "ea_3",
+          "source": "acc_node_3",
+          "target": "acc_node_4"
+        },
+        {
+          "id": "ea_4",
+          "source": "acc_node_4",
+          "target": "acc_node_5"
+        },
+        {
+          "id": "ea_5",
+          "source": "acc_node_5",
+          "target": "acc_node_6"
+        },
+        {
+          "id": "ea_6",
+          "source": "acc_node_6",
+          "target": "acc_node_7"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev_acc_1",
+          "frameId": "frame_acc_05",
+          "timestamp": "00:05",
+          "screenshotUrl": "/demo/acc_invoice_email.png",
+          "detectedElements": [
+            {
+              "label": "PDF Invoice Attachment",
+              "box": [
+                20,
+                20,
+                80,
+                80
+              ],
+              "confidence": 0.99
+            }
+          ],
+          "activeWindow": "Thunderbird - Inbox",
+          "ocrText": [
+            "invoice_apex_881.pdf",
+            "$3,450.00",
+            "Apex Consulting LLC"
+          ]
+        }
+      ]
+    },
+    {
+      "_id": "ver_developer_v1_0",
+      "processId": "proc_developer_bugfix",
+      "version": "v1.0 (Baseline)",
+      "isBaseline": true,
+      "createdAt": "2026-08-20T16:00:00.000Z",
+      "nodes": [
+        {
+          "id": "dev_node_1",
+          "label": "Open GitHub Issue #402",
+          "application": "GitHub Web",
+          "action": "Review issue description \"Stripe Webhook timeout on 10+ items cart\"",
+          "timestamp": "00:06",
+          "timestampSec": 6,
+          "screenshot": "/demo/dev_github_issue.png",
+          "confidence": 0.99,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /repos/quickcart/store-automations/issues/402",
+          "suggestedTools": [
+            "GitHub Octokit REST API"
+          ]
+        },
+        {
+          "id": "dev_node_2",
+          "label": "Open Git Repository & Branch",
+          "application": "GitHub Web / Git",
+          "action": "Create feature branch fix-qb-batch from main",
+          "timestamp": "00:14",
+          "timestampSec": 14,
+          "screenshot": "/demo/dev_github_issue.png",
+          "confidence": 0.98,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /repos/quickcart/store-automations/git/refs",
+          "suggestedTools": [
+            "Git CLI / GitHub API"
+          ]
+        },
+        {
+          "id": "dev_node_3",
+          "label": "Search Error in Stack Trace",
+          "application": "Sentry / VS Code",
+          "action": "Search ETIMEDOUT in QuickBooks invoice line items connector",
+          "timestamp": "00:22",
+          "timestampSec": 22,
+          "screenshot": "/demo/dev_vscode_editor.png",
+          "confidence": 0.96,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /api/0/projects/quickcart/issues/?query=ETIMEDOUT",
+          "suggestedTools": [
+            "Sentry REST API"
+          ]
+        },
+        {
+          "id": "dev_node_4",
+          "label": "Locate Source File: quickbooks-connector.ts",
+          "application": "Visual Studio Code",
+          "action": "Apply chunk batching logic to createQuickBooksInvoice()",
+          "timestamp": "00:33",
+          "timestampSec": 33,
+          "screenshot": "/demo/dev_vscode_editor.png",
+          "confidence": 0.97,
+          "automationMethod": "api",
+          "suggestedTools": [
+            "GitHub Codespaces / Git API"
+          ]
+        },
+        {
+          "id": "dev_node_5",
+          "label": "Run Automated Test Suite (Jest)",
+          "application": "Terminal / Jest",
+          "action": "Execute npm test -- tests/quickbooks-connector.spec.ts",
+          "timestamp": "00:42",
+          "timestampSec": 42,
+          "screenshot": "/demo/dev_test_runner.png",
+          "confidence": 0.99,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /repos/quickcart/store-automations/actions/workflows/test.yml/dispatches",
+          "suggestedTools": [
+            "GitHub Actions Runner"
+          ]
+        },
+        {
+          "id": "dev_node_6",
+          "label": "Inspect CI Execution Logs",
+          "application": "Terminal / GitHub Actions",
+          "action": "Verify all 18 unit tests and tax calculations passed",
+          "timestamp": "00:48",
+          "timestampSec": 48,
+          "screenshot": "/demo/dev_test_runner.png",
+          "confidence": 0.99,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /repos/quickcart/store-automations/actions/runs/{runId}/jobs",
+          "suggestedTools": [
+            "GitHub Actions API"
+          ]
+        },
+        {
+          "id": "dev_node_7",
+          "label": "Create Pull Request & Trigger CI",
+          "application": "GitHub Web",
+          "action": "Submit PR #403 \"fix(quickbooks): batch line items to eliminate webhook timeouts\"",
+          "timestamp": "00:52",
+          "timestampSec": 52,
+          "screenshot": "/demo/dev_pull_request.png",
+          "confidence": 0.98,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /repos/quickcart/store-automations/pulls",
+          "suggestedTools": [
+            "GitHub Pull Request API"
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "id": "edv_1",
+          "source": "dev_node_1",
+          "target": "dev_node_2"
+        },
+        {
+          "id": "edv_2",
+          "source": "dev_node_2",
+          "target": "dev_node_3"
+        },
+        {
+          "id": "edv_3",
+          "source": "dev_node_3",
+          "target": "dev_node_4"
+        },
+        {
+          "id": "edv_4",
+          "source": "dev_node_4",
+          "target": "dev_node_5"
+        },
+        {
+          "id": "edv_5",
+          "source": "dev_node_5",
+          "target": "dev_node_6"
+        },
+        {
+          "id": "edv_6",
+          "source": "dev_node_6",
+          "target": "dev_node_7"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev_dev_1",
+          "frameId": "frame_dev_06",
+          "timestamp": "00:06",
+          "screenshotUrl": "/demo/dev_github_issue.png",
+          "detectedElements": [
+            {
+              "label": "GitHub Issue #402",
+              "box": [
+                10,
+                10,
+                80,
+                80
+              ],
+              "confidence": 0.99
+            }
+          ],
+          "activeWindow": "Google Chrome - GitHub Issue #402",
+          "ocrText": [
+            "Issue #402",
+            "Stripe Webhook timeout",
+            "Open"
+          ]
+        }
+      ]
+    },
+    {
+      "_id": "ver_1789561177094",
+      "processId": "proc_quickcart_order",
+      "version": "v1.0 (Analyzed)",
+      "nodes": [
+        {
+          "id": "proc_quickcart_order_step_1",
+          "label": "New Order Notification",
+          "application": "Shopify Store",
+          "action": "Review incoming customer order notification in dashboard inbox",
+          "timestamp": "00:04",
+          "timestampSec": 4,
+          "screenshot": "/demo/order_inbox.png",
+          "confidence": 0.98,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /api/webhooks/shopify/orders/create",
+          "suggestedTools": [
+            "Shopify Webhooks",
+            "REST Admin API"
+          ],
+          "parameters": {
+            "event": "orders/create",
+            "payloadId": "order_9831"
+          },
+          "notes": "Can be replaced 100% with direct Shopify webhook subscription"
+        },
+        {
+          "id": "proc_quickcart_order_step_2",
+          "label": "Open Store Dashboard",
+          "application": "Shopify Store",
+          "action": "Navigate to Orders view and open pending Order #9831",
+          "timestamp": "00:11",
+          "timestampSec": 11,
+          "screenshot": "/demo/order_detail.png",
+          "confidence": 0.96,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /admin/api/2026-04/orders/9831.json",
+          "suggestedTools": [
+            "Shopify SDK"
+          ],
+          "parameters": {
+            "orderId": "9831"
+          },
+          "notes": "API provides line items, customer name, shipping address immediately"
+        },
+        {
+          "id": "proc_quickcart_order_step_3",
+          "label": "Check Customer Details & Risk",
+          "application": "Shopify Store",
+          "action": "Inspect customer fraud risk score and address validation flags",
+          "timestamp": "00:19",
+          "timestampSec": 19,
+          "screenshot": "/demo/risk_assessment.png",
+          "confidence": 0.94,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /admin/api/2026-04/orders/9831/risks.json",
+          "suggestedTools": [
+            "Shopify Fraud Analysis API"
+          ],
+          "parameters": {
+            "threshold": "low"
+          },
+          "notes": "Rule: If risk recommendation is \"accept\", proceed automatically; if \"investigate\", route to human"
+        },
+        {
+          "id": "proc_quickcart_order_step_4",
+          "label": "Check Payment Status",
+          "application": "Stripe Payments",
+          "action": "Verify transaction capture ID and 3D Secure verification status",
+          "timestamp": "00:26",
+          "timestampSec": 26,
+          "screenshot": "/demo/stripe_payment.png",
+          "confidence": 0.99,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /v1/payment_intents/pi_3N92jkdlsw92",
+          "suggestedTools": [
+            "Stripe Node SDK"
+          ],
+          "parameters": {
+            "status": "succeeded"
+          },
+          "notes": "Payment confirmed via payment_intent.succeeded event"
+        },
+        {
+          "id": "proc_quickcart_order_step_5",
+          "label": "Create Invoice in QuickBooks",
+          "application": "QuickBooks Online",
+          "action": "Enter item SKU, price, sales tax breakdown and generate invoice PDF",
+          "timestamp": "00:37",
+          "timestampSec": 37,
+          "screenshot": "/demo/quickbooks_invoice.png",
+          "confidence": 0.95,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /v3/company/QC-98421/invoice",
+          "suggestedTools": [
+            "Intuit QuickBooks API"
+          ],
+          "parameters": {
+            "customerRef": "QC-Cust-441",
+            "autoSend": "false"
+          },
+          "notes": "Replaces 4 minutes of manual bookkeeping data entry per order"
+        },
+        {
+          "id": "proc_quickcart_order_step_6",
+          "label": "Update Master Order Sheet",
+          "application": "Google Sheets",
+          "action": "Append order row to Logistics Tracking spreadsheet",
+          "timestamp": "00:48",
+          "timestampSec": 48,
+          "screenshot": "/demo/google_sheet.png",
+          "confidence": 0.97,
+          "automationMethod": "api",
+          "apiEndpoint": "POST https://sheets.googleapis.com/v4/spreadsheets/1Bxi.../values:append",
+          "suggestedTools": [
+            "Google Sheets API v4"
+          ],
+          "parameters": {
+            "range": "Orders!A:H",
+            "valueInputOption": "USER_ENTERED"
+          },
+          "notes": "Appends [Date, Order#, Customer, Amount, Status, TrackingID]"
+        },
+        {
+          "id": "proc_quickcart_order_step_7",
+          "label": "Send Confirmation Email",
+          "application": "SendGrid Email API",
+          "action": "Trigger transactional email with PDF invoice attachment and tracking link",
+          "timestamp": "00:55",
+          "timestampSec": 55,
+          "screenshot": "/demo/email_confirm.png",
+          "confidence": 0.98,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /v3/mail/send",
+          "suggestedTools": [
+            "SendGrid Mailer",
+            "Postmark"
+          ],
+          "parameters": {
+            "template_id": "d-98427189a0"
+          },
+          "notes": "Includes order summary and delivery window details"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1_2",
+          "source": "proc_quickcart_order_step_1",
+          "target": "proc_quickcart_order_step_2",
+          "label": "Order ID"
+        },
+        {
+          "id": "e2_3",
+          "source": "proc_quickcart_order_step_2",
+          "target": "proc_quickcart_order_step_3",
+          "label": "Customer ID"
+        },
+        {
+          "id": "e3_4",
+          "source": "proc_quickcart_order_step_3",
+          "target": "proc_quickcart_order_step_4",
+          "label": "Payment Intent"
+        },
+        {
+          "id": "e4_5",
+          "source": "proc_quickcart_order_step_4",
+          "target": "proc_quickcart_order_step_5",
+          "label": "Line Items"
+        },
+        {
+          "id": "e5_6",
+          "source": "proc_quickcart_order_step_5",
+          "target": "proc_quickcart_order_step_6",
+          "label": "Invoice Num"
+        },
+        {
+          "id": "e6_7",
+          "source": "proc_quickcart_order_step_6",
+          "target": "proc_quickcart_order_step_7",
+          "label": "Tracking & Mail"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev_proc_quickcart_order_1",
+          "frameId": "frame_04",
+          "timestamp": "00:04",
+          "screenshotUrl": "/demo/order_inbox.png",
+          "detectedElements": [
+            {
+              "label": "Shopify Admin Sidebar",
+              "box": [
+                0,
+                0,
+                100,
+                20
+              ],
+              "confidence": 0.99
+            },
+            {
+              "label": "Unfulfilled Order #9831 Row",
+              "box": [
+                22,
+                22,
+                34,
+                98
+              ],
+              "confidence": 0.97
+            }
+          ],
+          "activeWindow": "Google Chrome - Shopify Admin - Orders",
+          "ocrText": [
+            "Orders",
+            "Unfulfilled",
+            "#9831",
+            "David K.",
+            "$142.50",
+            "Paid"
+          ]
+        },
+        {
+          "id": "ev_proc_quickcart_order_2",
+          "frameId": "frame_11",
+          "timestamp": "00:11",
+          "screenshotUrl": "/demo/order_detail.png",
+          "detectedElements": [
+            {
+              "label": "Order Summary Card",
+              "box": [
+                15,
+                20,
+                70,
+                75
+              ],
+              "confidence": 0.98
+            },
+            {
+              "label": "Customer Contact Info",
+              "box": [
+                15,
+                78,
+                45,
+                98
+              ],
+              "confidence": 0.96
+            }
+          ],
+          "activeWindow": "Google Chrome - Shopify Admin - Order #9831",
+          "ocrText": [
+            "Order #9831",
+            "Items: 2",
+            "Wireless Headphones Pro x1",
+            "Replacement Ear Cushions x1"
+          ]
+        },
+        {
+          "id": "ev_proc_quickcart_order_3",
+          "frameId": "frame_19",
+          "timestamp": "00:19",
+          "screenshotUrl": "/demo/risk_assessment.png",
+          "detectedElements": [
+            {
+              "label": "Shopify Fraud Analysis Card",
+              "box": [
+                10,
+                10,
+                80,
+                90
+              ],
+              "confidence": 0.95
+            }
+          ],
+          "activeWindow": "Google Chrome - Shopify Fraud Guard",
+          "ocrText": [
+            "Risk Level: LOW",
+            "CVV Match: PASS",
+            "Address Match: PASS"
+          ]
+        },
+        {
+          "id": "ev_proc_quickcart_order_4",
+          "frameId": "frame_26",
+          "timestamp": "00:26",
+          "screenshotUrl": "/demo/stripe_payment.png",
+          "detectedElements": [
+            {
+              "label": "Stripe Payment Intent Card",
+              "box": [
+                20,
+                25,
+                65,
+                85
+              ],
+              "confidence": 0.99
+            }
+          ],
+          "activeWindow": "Google Chrome - Stripe Dashboard",
+          "ocrText": [
+            "Payment Intent: pi_3N92jkdlsw92",
+            "Amount: $142.50",
+            "Status: Succeeded"
+          ]
+        },
+        {
+          "id": "ev_proc_quickcart_order_5",
+          "frameId": "frame_37",
+          "timestamp": "00:37",
+          "screenshotUrl": "/demo/quickbooks_invoice.png",
+          "detectedElements": [
+            {
+              "label": "QuickBooks Invoice Form",
+              "box": [
+                10,
+                15,
+                90,
+                85
+              ],
+              "confidence": 0.97
+            }
+          ],
+          "activeWindow": "Google Chrome - QuickBooks Online - Invoicing",
+          "ocrText": [
+            "Invoice #INV-2026-1049",
+            "Subtotal: $130.00",
+            "Tax: $12.50",
+            "Total: $142.50"
+          ]
+        },
+        {
+          "id": "ev_proc_quickcart_order_6",
+          "frameId": "frame_48",
+          "timestamp": "00:48",
+          "screenshotUrl": "/demo/google_sheet.png",
+          "detectedElements": [
+            {
+              "label": "Spreadsheet Grid Row Entry",
+              "box": [
+                15,
+                5,
+                30,
+                95
+              ],
+              "confidence": 0.97
+            }
+          ],
+          "activeWindow": "Google Chrome - Google Sheets (Orders DB)",
+          "ocrText": [
+            "2026-08-10",
+            "#9831",
+            "David Kramer",
+            "$142.50",
+            "COMPLETED"
+          ]
+        },
+        {
+          "id": "ev_proc_quickcart_order_7",
+          "frameId": "frame_55",
+          "timestamp": "00:55",
+          "screenshotUrl": "/demo/email_confirm.png",
+          "detectedElements": [
+            {
+              "label": "Email Template Preview Card",
+              "box": [
+                10,
+                15,
+                85,
+                85
+              ],
+              "confidence": 0.98
+            }
+          ],
+          "activeWindow": "Google Chrome - SendGrid Email Composer",
+          "ocrText": [
+            "QuickCart Store — Order Confirmed",
+            "David Kramer",
+            "INV-2026-1049"
+          ]
+        }
+      ],
+      "isBaseline": true,
+      "createdAt": "2026-09-16T12:19:37.094Z"
+    },
+    {
+      "_id": "ver_1789561279556",
+      "processId": "proc_1789561279532",
+      "version": "v1.0 (Analyzed)",
+      "nodes": [
+        {
+          "id": "proc_1789561279532_step_1",
+          "label": "New Order Notification",
+          "application": "Shopify Store",
+          "action": "Review incoming customer order notification in dashboard inbox",
+          "timestamp": "00:04",
+          "timestampSec": 4,
+          "screenshot": "/demo/order_inbox.png",
+          "confidence": 0.98,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /api/webhooks/shopify/orders/create",
+          "suggestedTools": [
+            "Shopify Webhooks",
+            "REST Admin API"
+          ],
+          "parameters": {
+            "event": "orders/create",
+            "payloadId": "order_9831"
+          },
+          "notes": "Can be replaced 100% with direct Shopify webhook subscription"
+        },
+        {
+          "id": "proc_1789561279532_step_2",
+          "label": "Open Store Dashboard",
+          "application": "Shopify Store",
+          "action": "Navigate to Orders view and open pending Order #9831",
+          "timestamp": "00:11",
+          "timestampSec": 11,
+          "screenshot": "/demo/order_detail.png",
+          "confidence": 0.96,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /admin/api/2026-04/orders/9831.json",
+          "suggestedTools": [
+            "Shopify SDK"
+          ],
+          "parameters": {
+            "orderId": "9831"
+          },
+          "notes": "API provides line items, customer name, shipping address immediately"
+        },
+        {
+          "id": "proc_1789561279532_step_3",
+          "label": "Check Customer Details & Risk",
+          "application": "Shopify Store",
+          "action": "Inspect customer fraud risk score and address validation flags",
+          "timestamp": "00:19",
+          "timestampSec": 19,
+          "screenshot": "/demo/risk_assessment.png",
+          "confidence": 0.94,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /admin/api/2026-04/orders/9831/risks.json",
+          "suggestedTools": [
+            "Shopify Fraud Analysis API"
+          ],
+          "parameters": {
+            "threshold": "low"
+          },
+          "notes": "Rule: If risk recommendation is \"accept\", proceed automatically; if \"investigate\", route to human"
+        },
+        {
+          "id": "proc_1789561279532_step_4",
+          "label": "Check Payment Status",
+          "application": "Stripe Payments",
+          "action": "Verify transaction capture ID and 3D Secure verification status",
+          "timestamp": "00:26",
+          "timestampSec": 26,
+          "screenshot": "/demo/stripe_payment.png",
+          "confidence": 0.99,
+          "automationMethod": "api",
+          "apiEndpoint": "GET /v1/payment_intents/pi_3N92jkdlsw92",
+          "suggestedTools": [
+            "Stripe Node SDK"
+          ],
+          "parameters": {
+            "status": "succeeded"
+          },
+          "notes": "Payment confirmed via payment_intent.succeeded event"
+        },
+        {
+          "id": "proc_1789561279532_step_5",
+          "label": "Create Invoice in QuickBooks",
+          "application": "QuickBooks Online",
+          "action": "Enter item SKU, price, sales tax breakdown and generate invoice PDF",
+          "timestamp": "00:37",
+          "timestampSec": 37,
+          "screenshot": "/demo/quickbooks_invoice.png",
+          "confidence": 0.95,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /v3/company/QC-98421/invoice",
+          "suggestedTools": [
+            "Intuit QuickBooks API"
+          ],
+          "parameters": {
+            "customerRef": "QC-Cust-441",
+            "autoSend": "false"
+          },
+          "notes": "Replaces 4 minutes of manual bookkeeping data entry per order"
+        },
+        {
+          "id": "proc_1789561279532_step_6",
+          "label": "Update Master Order Sheet",
+          "application": "Google Sheets",
+          "action": "Append order row to Logistics Tracking spreadsheet",
+          "timestamp": "00:48",
+          "timestampSec": 48,
+          "screenshot": "/demo/google_sheet.png",
+          "confidence": 0.97,
+          "automationMethod": "api",
+          "apiEndpoint": "POST https://sheets.googleapis.com/v4/spreadsheets/1Bxi.../values:append",
+          "suggestedTools": [
+            "Google Sheets API v4"
+          ],
+          "parameters": {
+            "range": "Orders!A:H",
+            "valueInputOption": "USER_ENTERED"
+          },
+          "notes": "Appends [Date, Order#, Customer, Amount, Status, TrackingID]"
+        },
+        {
+          "id": "proc_1789561279532_step_7",
+          "label": "Send Confirmation Email",
+          "application": "SendGrid Email API",
+          "action": "Trigger transactional email with PDF invoice attachment and tracking link",
+          "timestamp": "00:55",
+          "timestampSec": 55,
+          "screenshot": "/demo/email_confirm.png",
+          "confidence": 0.98,
+          "automationMethod": "api",
+          "apiEndpoint": "POST /v3/mail/send",
+          "suggestedTools": [
+            "SendGrid Mailer",
+            "Postmark"
+          ],
+          "parameters": {
+            "template_id": "d-98427189a0"
+          },
+          "notes": "Includes order summary and delivery window details"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1_2",
+          "source": "proc_1789561279532_step_1",
+          "target": "proc_1789561279532_step_2",
+          "label": "Order ID"
+        },
+        {
+          "id": "e2_3",
+          "source": "proc_1789561279532_step_2",
+          "target": "proc_1789561279532_step_3",
+          "label": "Customer ID"
+        },
+        {
+          "id": "e3_4",
+          "source": "proc_1789561279532_step_3",
+          "target": "proc_1789561279532_step_4",
+          "label": "Payment Intent"
+        },
+        {
+          "id": "e4_5",
+          "source": "proc_1789561279532_step_4",
+          "target": "proc_1789561279532_step_5",
+          "label": "Line Items"
+        },
+        {
+          "id": "e5_6",
+          "source": "proc_1789561279532_step_5",
+          "target": "proc_1789561279532_step_6",
+          "label": "Invoice Num"
+        },
+        {
+          "id": "e6_7",
+          "source": "proc_1789561279532_step_6",
+          "target": "proc_1789561279532_step_7",
+          "label": "Tracking & Mail"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev_proc_1789561279532_1",
+          "frameId": "frame_04",
+          "timestamp": "00:04",
+          "screenshotUrl": "/demo/order_inbox.png",
+          "detectedElements": [
+            {
+              "label": "Shopify Admin Sidebar",
+              "box": [
+                0,
+                0,
+                100,
+                20
+              ],
+              "confidence": 0.99
+            },
+            {
+              "label": "Unfulfilled Order #9831 Row",
+              "box": [
+                22,
+                22,
+                34,
+                98
+              ],
+              "confidence": 0.97
+            }
+          ],
+          "activeWindow": "Google Chrome - Shopify Admin - Orders",
+          "ocrText": [
+            "Orders",
+            "Unfulfilled",
+            "#9831",
+            "David K.",
+            "$142.50",
+            "Paid"
+          ]
+        },
+        {
+          "id": "ev_proc_1789561279532_2",
+          "frameId": "frame_11",
+          "timestamp": "00:11",
+          "screenshotUrl": "/demo/order_detail.png",
+          "detectedElements": [
+            {
+              "label": "Order Summary Card",
+              "box": [
+                15,
+                20,
+                70,
+                75
+              ],
+              "confidence": 0.98
+            },
+            {
+              "label": "Customer Contact Info",
+              "box": [
+                15,
+                78,
+                45,
+                98
+              ],
+              "confidence": 0.96
+            }
+          ],
+          "activeWindow": "Google Chrome - Shopify Admin - Order #9831",
+          "ocrText": [
+            "Order #9831",
+            "Items: 2",
+            "Wireless Headphones Pro x1",
+            "Replacement Ear Cushions x1"
+          ]
+        },
+        {
+          "id": "ev_proc_1789561279532_3",
+          "frameId": "frame_19",
+          "timestamp": "00:19",
+          "screenshotUrl": "/demo/risk_assessment.png",
+          "detectedElements": [
+            {
+              "label": "Shopify Fraud Analysis Card",
+              "box": [
+                10,
+                10,
+                80,
+                90
+              ],
+              "confidence": 0.95
+            }
+          ],
+          "activeWindow": "Google Chrome - Shopify Fraud Guard",
+          "ocrText": [
+            "Risk Level: LOW",
+            "CVV Match: PASS",
+            "Address Match: PASS"
+          ]
+        },
+        {
+          "id": "ev_proc_1789561279532_4",
+          "frameId": "frame_26",
+          "timestamp": "00:26",
+          "screenshotUrl": "/demo/stripe_payment.png",
+          "detectedElements": [
+            {
+              "label": "Stripe Payment Intent Card",
+              "box": [
+                20,
+                25,
+                65,
+                85
+              ],
+              "confidence": 0.99
+            }
+          ],
+          "activeWindow": "Google Chrome - Stripe Dashboard",
+          "ocrText": [
+            "Payment Intent: pi_3N92jkdlsw92",
+            "Amount: $142.50",
+            "Status: Succeeded"
+          ]
+        },
+        {
+          "id": "ev_proc_1789561279532_5",
+          "frameId": "frame_37",
+          "timestamp": "00:37",
+          "screenshotUrl": "/demo/quickbooks_invoice.png",
+          "detectedElements": [
+            {
+              "label": "QuickBooks Invoice Form",
+              "box": [
+                10,
+                15,
+                90,
+                85
+              ],
+              "confidence": 0.97
+            }
+          ],
+          "activeWindow": "Google Chrome - QuickBooks Online - Invoicing",
+          "ocrText": [
+            "Invoice #INV-2026-1049",
+            "Subtotal: $130.00",
+            "Tax: $12.50",
+            "Total: $142.50"
+          ]
+        },
+        {
+          "id": "ev_proc_1789561279532_6",
+          "frameId": "frame_48",
+          "timestamp": "00:48",
+          "screenshotUrl": "/demo/google_sheet.png",
+          "detectedElements": [
+            {
+              "label": "Spreadsheet Grid Row Entry",
+              "box": [
+                15,
+                5,
+                30,
+                95
+              ],
+              "confidence": 0.97
+            }
+          ],
+          "activeWindow": "Google Chrome - Google Sheets (Orders DB)",
+          "ocrText": [
+            "2026-08-10",
+            "#9831",
+            "David Kramer",
+            "$142.50",
+            "COMPLETED"
+          ]
+        },
+        {
+          "id": "ev_proc_1789561279532_7",
+          "frameId": "frame_55",
+          "timestamp": "00:55",
+          "screenshotUrl": "/demo/email_confirm.png",
+          "detectedElements": [
+            {
+              "label": "Email Template Preview Card",
+              "box": [
+                10,
+                15,
+                85,
+                85
+              ],
+              "confidence": 0.98
+            }
+          ],
+          "activeWindow": "Google Chrome - SendGrid Email Composer",
+          "ocrText": [
+            "QuickCart Store — Order Confirmed",
+            "David Kramer",
+            "INV-2026-1049"
+          ]
+        }
+      ],
+      "isBaseline": true,
+      "createdAt": "2026-09-16T12:21:19.556Z"
+    }
+  ],
+  "workflows": [
+    {
+      "_id": "wf_quickcart_order_auto",
+      "businessId": "biz_quickcart",
+      "processId": "proc_quickcart_order",
+      "processVersionId": "ver_quickcart_v1_0",
+      "name": "QuickCart Auto-Fulfillment Flow v1.0",
+      "status": "approved",
+      "approvedBy": "user_sarah",
+      "approvedAt": "2026-09-16T12:19:37.122Z",
+      "steps": [
+        {
+          "id": "wf_step_1",
+          "name": "Ingest Webhook",
+          "type": "api_call",
+          "target": "Shopify Store",
+          "action": "POST /api/webhooks/shopify/orders/create",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_2",
+          "name": "Validate Fraud & Risk Score",
+          "type": "api_call",
+          "target": "Shopify Store",
+          "action": "GET /admin/api/orders/{id}/risks.json",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_3",
+          "name": "Verify Stripe Charge",
+          "type": "api_call",
+          "target": "Stripe Payments",
+          "action": "GET /v1/payment_intents/{id}",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_4",
+          "name": "Generate QuickBooks Invoice",
+          "type": "api_call",
+          "target": "QuickBooks Online",
+          "action": "POST /v3/company/invoice",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_5",
+          "name": "Append Google Sheet Row",
+          "type": "api_call",
+          "target": "Google Sheets",
+          "action": "POST /v4/spreadsheets/{id}/values:append",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_6",
+          "name": "Send Customer Confirmation Email",
+          "type": "api_call",
+          "target": "SendGrid Email API",
+          "action": "POST /v3/mail/send",
+          "method": "api"
+        }
+      ],
+      "codeScript": "/**\n * QuickCart Automated Order Processing Runner\n * Generated by ProcessMind Automation Agent\n * Verified in Sandbox by ProcessMind Verification Agent\n */\nimport { shopify, stripe, quickbooks, sheets, sendgrid } from '@processmind/connectors';\n\nexport async function processQuickCartOrder(event: { orderId: string; paymentIntentId: string }) {\n  console.log('[ProcessMind] Starting order fulfillment pipeline for Order #' + event.orderId);\n  \n  // 1. Fetch Order details from Shopify API\n  const order = await shopify.getOrder(event.orderId);\n  console.log('[Shopify API] Order retrieved:', order.id, 'Customer:', order.customer.email);\n  \n  // 2. Risk check\n  const risks = await shopify.getOrderRisks(event.orderId);\n  if (risks.recommendation === 'cancel') {\n    throw new Error('High risk order flagged by Shopify');\n  }\n  \n  // 3. Confirm Stripe charge\n  const payment = await stripe.paymentIntents.retrieve(event.paymentIntentId);\n  if (payment.status !== 'succeeded') {\n    throw new Error('Payment capture unverified: ' + payment.status);\n  }\n  \n  // 4. QuickBooks Invoice\n  const invoice = await quickbooks.createInvoice({\n    customer: order.customer.name,\n    items: order.line_items,\n    total: payment.amount_received / 100\n  });\n  console.log('[QuickBooks API] Invoice generated:', invoice.docNumber);\n  \n  // 5. Append to Google Sheets ledger\n  await sheets.appendRow({\n    spreadsheetId: process.env.ORDERS_SHEET_ID,\n    row: [new Date().toISOString(), order.id, order.customer.name, invoice.total, 'COMPLETED']\n  });\n  \n  // 6. SendGrid notification\n  await sendgrid.send({\n    to: order.customer.email,\n    template: 'order-confirmed',\n    data: { orderId: order.id, invoiceUrl: invoice.pdfUrl }\n  });\n  \n  return { success: true, orderId: order.id, invoiceId: invoice.id };\n}",
+      "createdAt": "2026-08-11T09:00:00.000Z",
+      "updatedAt": "2026-09-16T12:19:37.122Z"
+    },
+    {
+      "_id": "wf_accounting_auto",
+      "businessId": "biz_quickcart",
+      "processId": "proc_accounting_firm",
+      "processVersionId": "ver_accounting_v1_0",
+      "name": "QuickBooks Automated AP Bill Runner",
+      "status": "approved",
+      "approvedBy": "user_sarah",
+      "approvedAt": "2026-08-15T11:20:00.000Z",
+      "steps": [
+        {
+          "id": "as_1",
+          "name": "Extract PDF Attachment",
+          "type": "api_call",
+          "target": "Thunderbird",
+          "action": "GET /inbox/attachments",
+          "method": "api"
+        },
+        {
+          "id": "as_2",
+          "name": "Query Vendor in QuickBooks",
+          "type": "api_call",
+          "target": "QuickBooks Online",
+          "action": "GET /v3/company/vendor",
+          "method": "api"
+        },
+        {
+          "id": "as_3",
+          "name": "Create Bill Record ($3,450.00)",
+          "type": "api_call",
+          "target": "QuickBooks Online",
+          "action": "POST /v3/company/bill",
+          "method": "api"
+        },
+        {
+          "id": "as_4",
+          "name": "Update AP Ledger Sheet",
+          "type": "api_call",
+          "target": "Google Sheets",
+          "action": "POST /v4/spreadsheets/values:append",
+          "method": "api"
+        },
+        {
+          "id": "as_5",
+          "name": "Send Vendor Receipt Confirmation",
+          "type": "api_call",
+          "target": "SendGrid Email",
+          "action": "POST /v3/mail/send",
+          "method": "api"
+        }
+      ],
+      "codeScript": "import { emailParser, quickbooks, sheets, sendgrid } from '@processmind/connectors';\n\nexport async function processClientInvoice(emailEvent: { attachmentUrl: string }) {\n  const invoice = await emailParser.extractInvoice(emailEvent.attachmentUrl);\n  const vendor = await quickbooks.findVendorByName(invoice.vendorName);\n  const bill = await quickbooks.createBill({\n    vendorId: vendor.id,\n    amount: invoice.totalAmount,\n    dueDate: invoice.dueDate,\n    items: invoice.lineItems\n  });\n  await sheets.appendRow({ spreadsheetId: process.env.AP_SHEET_ID, row: [new Date().toISOString(), bill.id, invoice.vendorName, invoice.totalAmount] });\n  await sendgrid.sendReceipt({ to: invoice.vendorEmail, billId: bill.id });\n  return { success: true, billId: bill.id };\n}",
+      "createdAt": "2026-08-15T11:15:00.000Z",
+      "updatedAt": "2026-08-15T11:20:00.000Z"
+    },
+    {
+      "_id": "wf_developer_auto",
+      "businessId": "biz_quickcart",
+      "processId": "proc_developer_bugfix",
+      "processVersionId": "ver_developer_v1_0",
+      "name": "GitHub CI/CD Automated Bug Fix Pipeline",
+      "status": "approved",
+      "approvedBy": "user_sarah",
+      "approvedAt": "2026-08-20T16:30:00.000Z",
+      "steps": [
+        {
+          "id": "ds_1",
+          "name": "Fetch Issue Details",
+          "type": "api_call",
+          "target": "GitHub",
+          "action": "GET /repos/{repo}/issues/{id}",
+          "method": "api"
+        },
+        {
+          "id": "ds_2",
+          "name": "Create Git Fix Branch",
+          "type": "api_call",
+          "target": "GitHub",
+          "action": "POST /repos/{repo}/git/refs",
+          "method": "api"
+        },
+        {
+          "id": "ds_3",
+          "name": "Trigger Remote Test Suite",
+          "type": "api_call",
+          "target": "GitHub Actions",
+          "action": "POST /actions/workflows/test.yml/dispatches",
+          "method": "api"
+        },
+        {
+          "id": "ds_4",
+          "name": "Create Pull Request",
+          "type": "api_call",
+          "target": "GitHub",
+          "action": "POST /repos/{repo}/pulls",
+          "method": "api"
+        }
+      ],
+      "codeScript": "import { Octokit } from '@octokit/rest';\n\nexport async function automateBugFix(issueNumber: number) {\n  const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });\n  const issue = await octokit.rest.issues.get({ owner: 'quickcart', repo: 'store-automations', issue_number: issueNumber });\n  const branchName = 'fix-issue-' + issueNumber;\n  const mainRef = await octokit.rest.git.getRef({ owner: 'quickcart', repo: 'store-automations', ref: 'heads/main' });\n  await octokit.rest.git.createRef({ owner: 'quickcart', repo: 'store-automations', ref: 'refs/heads/' + branchName, sha: mainRef.data.object.sha });\n  const pr = await octokit.rest.pulls.create({\n    owner: 'quickcart',\n    repo: 'store-automations',\n    title: 'fix: automated patch for issue #' + issueNumber,\n    head: branchName,\n    base: 'main',\n    body: 'Automated pull request synthesized by ProcessMind Software Agent.'\n  });\n  return { success: true, prUrl: pr.data.html_url };\n}",
+      "createdAt": "2026-08-20T16:25:00.000Z",
+      "updatedAt": "2026-08-20T16:30:00.000Z"
+    },
+    {
+      "_id": "wf_1789561177097",
+      "businessId": "biz_quickcart",
+      "processId": "proc_quickcart_order",
+      "processVersionId": "ver_1789561177094",
+      "name": "Order Processing & Fulfillment Automation",
+      "steps": [
+        {
+          "id": "wf_step_1",
+          "name": "Ingest Webhook",
+          "type": "api_call",
+          "target": "Shopify Store",
+          "action": "POST /api/webhooks/shopify/orders/create",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_2",
+          "name": "Validate Fraud & Risk Score",
+          "type": "api_call",
+          "target": "Shopify Store",
+          "action": "GET /admin/api/orders/{id}/risks.json",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_3",
+          "name": "Verify Stripe Charge",
+          "type": "api_call",
+          "target": "Stripe Payments",
+          "action": "GET /v1/payment_intents/{id}",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_4",
+          "name": "Generate QuickBooks Invoice",
+          "type": "api_call",
+          "target": "QuickBooks Online",
+          "action": "POST /v3/company/invoice",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_5",
+          "name": "Append Google Sheet Row",
+          "type": "api_call",
+          "target": "Google Sheets",
+          "action": "POST /v4/spreadsheets/{id}/values:append",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_6",
+          "name": "Send Customer Confirmation Email",
+          "type": "api_call",
+          "target": "SendGrid Email API",
+          "action": "POST /v3/mail/send",
+          "method": "api"
+        }
+      ],
+      "codeScript": "/**\n * QuickCart Automated Order Processing Runner\n * Generated by ProcessMind Automation Agent\n * Verified in Sandbox by ProcessMind Verification Agent\n */\nimport { shopify, stripe, quickbooks, sheets, sendgrid } from '@processmind/connectors';\n\nexport async function processQuickCartOrder(event: { orderId: string; paymentIntentId: string }) {\n  console.log('[ProcessMind] Starting order fulfillment pipeline for Order #' + event.orderId);\n  \n  // 1. Fetch Order details from Shopify API\n  const order = await shopify.getOrder(event.orderId);\n  console.log('[Shopify API] Order retrieved:', order.id, 'Customer:', order.customer.email);\n  \n  // 2. Risk check\n  const risks = await shopify.getOrderRisks(event.orderId);\n  if (risks.recommendation === 'cancel') {\n    throw new Error('High risk order flagged by Shopify: ' + risks.summary);\n  }\n  \n  // 3. Confirm Stripe charge\n  const payment = await stripe.paymentIntents.retrieve(event.paymentIntentId);\n  if (payment.status !== 'succeeded') {\n    throw new Error('Payment capture unverified: ' + payment.status);\n  }\n  \n  // 4. QuickBooks Invoice\n  const invoice = await quickbooks.createInvoice({\n    customer: order.customer.name,\n    items: order.line_items,\n    total: payment.amount_received / 100\n  });\n  console.log('[QuickBooks API] Invoice generated:', invoice.docNumber);\n  \n  // 5. Append to Google Sheets ledger\n  await sheets.appendRow({\n    spreadsheetId: process.env.ORDERS_SHEET_ID,\n    row: [new Date().toISOString(), order.id, order.customer.name, invoice.total, 'COMPLETED']\n  });\n  \n  // 6. SendGrid notification\n  await sendgrid.send({\n    to: order.customer.email,\n    template: 'order-confirmed',\n    data: { orderId: order.id, invoiceUrl: invoice.pdfUrl }\n  });\n  \n  return { success: true, orderId: order.id, invoiceId: invoice.id };\n}",
+      "status": "pending_approval",
+      "createdAt": "2026-09-16T12:19:37.097Z",
+      "updatedAt": "2026-09-16T12:19:37.097Z"
+    },
+    {
+      "_id": "wf_1789561279562",
+      "businessId": "biz_quickcart",
+      "processId": "proc_1789561279532",
+      "processVersionId": "ver_1789561279556",
+      "name": "QuickCart with Employee Excel Shadow Drift Automation",
+      "steps": [
+        {
+          "id": "wf_step_1",
+          "name": "Ingest Webhook",
+          "type": "api_call",
+          "target": "Shopify Store",
+          "action": "POST /api/webhooks/shopify/orders/create",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_2",
+          "name": "Validate Fraud & Risk Score",
+          "type": "api_call",
+          "target": "Shopify Store",
+          "action": "GET /admin/api/orders/{id}/risks.json",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_3",
+          "name": "Verify Stripe Charge",
+          "type": "api_call",
+          "target": "Stripe Payments",
+          "action": "GET /v1/payment_intents/{id}",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_4",
+          "name": "Generate QuickBooks Invoice",
+          "type": "api_call",
+          "target": "QuickBooks Online",
+          "action": "POST /v3/company/invoice",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_5",
+          "name": "Append Google Sheet Row",
+          "type": "api_call",
+          "target": "Google Sheets",
+          "action": "POST /v4/spreadsheets/{id}/values:append",
+          "method": "api"
+        },
+        {
+          "id": "wf_step_6",
+          "name": "Send Customer Confirmation Email",
+          "type": "api_call",
+          "target": "SendGrid Email API",
+          "action": "POST /v3/mail/send",
+          "method": "api"
+        }
+      ],
+      "codeScript": "/**\n * QuickCart Automated Order Processing Runner\n * Generated by ProcessMind Automation Agent\n * Verified in Sandbox by ProcessMind Verification Agent\n */\nimport { shopify, stripe, quickbooks, sheets, sendgrid } from '@processmind/connectors';\n\nexport async function processQuickCartOrder(event: { orderId: string; paymentIntentId: string }) {\n  console.log('[ProcessMind] Starting order fulfillment pipeline for Order #' + event.orderId);\n  \n  // 1. Fetch Order details from Shopify API\n  const order = await shopify.getOrder(event.orderId);\n  console.log('[Shopify API] Order retrieved:', order.id, 'Customer:', order.customer.email);\n  \n  // 2. Risk check\n  const risks = await shopify.getOrderRisks(event.orderId);\n  if (risks.recommendation === 'cancel') {\n    throw new Error('High risk order flagged by Shopify: ' + risks.summary);\n  }\n  \n  // 3. Confirm Stripe charge\n  const payment = await stripe.paymentIntents.retrieve(event.paymentIntentId);\n  if (payment.status !== 'succeeded') {\n    throw new Error('Payment capture unverified: ' + payment.status);\n  }\n  \n  // 4. QuickBooks Invoice\n  const invoice = await quickbooks.createInvoice({\n    customer: order.customer.name,\n    items: order.line_items,\n    total: payment.amount_received / 100\n  });\n  console.log('[QuickBooks API] Invoice generated:', invoice.docNumber);\n  \n  // 5. Append to Google Sheets ledger\n  await sheets.appendRow({\n    spreadsheetId: process.env.ORDERS_SHEET_ID,\n    row: [new Date().toISOString(), order.id, order.customer.name, invoice.total, 'COMPLETED']\n  });\n  \n  // 6. SendGrid notification\n  await sendgrid.send({\n    to: order.customer.email,\n    template: 'order-confirmed',\n    data: { orderId: order.id, invoiceUrl: invoice.pdfUrl }\n  });\n  \n  return { success: true, orderId: order.id, invoiceId: invoice.id };\n}",
+      "status": "pending_approval",
+      "createdAt": "2026-09-16T12:21:19.562Z",
+      "updatedAt": "2026-09-16T12:21:19.562Z"
+    }
+  ],
+  "agentRuns": [
+    {
+      "_id": "run_analysis_init",
+      "businessId": "biz_quickcart",
+      "processId": "proc_quickcart_order",
+      "agentType": "orchestrator",
+      "status": "completed",
+      "output": {
+        "stepsFound": 7,
+        "apiFeasibility": "94%",
+        "browserRequiredSteps": 0,
+        "humanReviewRequiredSteps": 0
+      },
+      "timeline": [
+        {
+          "id": "tl_1",
+          "agentType": "vision",
+          "phase": "PREPROCESSING & KEYFRAME EXTRACTION",
+          "message": "Preprocessed 58-second video. Sampled 42 high-entropy keyframes. Detected 5 distinct application windows.",
+          "timestamp": "2026-08-10T14:30:05Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_2",
+          "agentType": "vision",
+          "phase": "UI BOUNDING BOX & ELEMENT RECOGNITION",
+          "message": "Identified Shopify Admin table, Stripe dashboard payment status, QuickBooks invoice inputs, and Google Sheets rows.",
+          "timestamp": "2026-08-10T14:30:12Z",
+          "level": "success"
+        },
+        {
+          "id": "tl_3",
+          "agentType": "process_analyst",
+          "phase": "SEMANTIC GRAPH EXTRACTION",
+          "message": "Synthesized 42 raw UI interactions into 7 clean business process nodes with dependency edges and data propagation paths.",
+          "timestamp": "2026-08-10T14:30:18Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_4",
+          "agentType": "software",
+          "phase": "DEVELOPER TOOLS CONTEXT MAPPING",
+          "message": "Mapped 6 of 7 steps to direct REST APIs (Shopify Admin API, Stripe REST, QuickBooks Intuit v3, Google Sheets v4, SendGrid v3). Zero browser scraping required.",
+          "timestamp": "2026-08-10T14:30:24Z",
+          "level": "success"
+        },
+        {
+          "id": "tl_5",
+          "agentType": "automation",
+          "phase": "WORKFLOW SCRIPT SYNTHESIS",
+          "message": "Generated complete TypeScript orchestration script and execution plan with retry policies and audit logging.",
+          "timestamp": "2026-08-10T14:30:30Z",
+          "level": "success"
+        },
+        {
+          "id": "tl_6",
+          "agentType": "verification",
+          "phase": "SANDBOX VERIFICATION EXECUTION",
+          "message": "Executed end-to-end sandbox mock order #9831. Verified 6/6 step outputs. Execution duration: 1.28s. Zero errors.",
+          "timestamp": "2026-08-10T14:30:36Z",
+          "level": "success"
+        }
+      ],
+      "createdAt": "2026-08-10T14:30:00.000Z",
+      "updatedAt": "2026-08-10T14:30:36.000Z"
+    },
+    {
+      "_id": "run_1789561177090",
+      "businessId": "biz_quickcart",
+      "processId": "proc_quickcart_order",
+      "agentType": "orchestrator",
+      "status": "needs_approval",
+      "timeline": [
+        {
+          "id": "tl_1789561177090_mvtvr",
+          "agentType": "vision",
+          "phase": "1. RECEIVED",
+          "message": "Received screen recording payload for process \"Order Processing & Fulfillment\". Validated MP4 container.",
+          "timestamp": "2026-09-16T12:19:37.090Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_1789561177091_wldz1",
+          "agentType": "vision",
+          "phase": "2. PREPROCESSING",
+          "message": "Sampling video frames at 1 fps with scene-change entropy detection. 42 keyframes extracted.",
+          "timestamp": "2026-09-16T12:19:37.091Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_1789561177092_kj608",
+          "agentType": "vision",
+          "phase": "3. VISION_ANALYSIS",
+          "message": "Vision Agent scanning visual frames: detecting bounding boxes, window headers, OCR labels, and cursor coordinates.",
+          "timestamp": "2026-09-16T12:19:37.092Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_1789561177093_g4urn",
+          "agentType": "vision",
+          "phase": "3. VISION_ANALYSIS_COMPLETE",
+          "message": "Computer Vision analyzed 42 frames across 5 SaaS web applications. Detected 7 sequential user actions with average 97.1% visual confidence.",
+          "timestamp": "2026-09-16T12:19:37.093Z",
+          "level": "success",
+          "data": {
+            "framesExtracted": 42,
+            "applicationsDetected": [
+              "Shopify Admin",
+              "Stripe Dashboard",
+              "QuickBooks Online",
+              "Google Sheets",
+              "SendGrid Email"
+            ],
+            "actionsDetected": [
+              {
+                "timestamp": "00:04",
+                "timestampSec": 4,
+                "activeWindow": "Google Chrome - Shopify Admin - Orders",
+                "eventType": "click",
+                "targetElement": "Table Row #9831",
+                "confidence": 0.97,
+                "frameRef": "frame_04",
+                "ocrHighlights": [
+                  "#9831",
+                  "Unfulfilled",
+                  "$142.50"
+                ]
+              },
+              {
+                "timestamp": "00:11",
+                "timestampSec": 11,
+                "activeWindow": "Google Chrome - Shopify Admin - Order #9831",
+                "eventType": "navigate",
+                "targetElement": "Order Detail View",
+                "confidence": 0.98,
+                "frameRef": "frame_11",
+                "ocrHighlights": [
+                  "Wireless Studio Headphones Pro",
+                  "Velour Ear Cushions"
+                ]
+              },
+              {
+                "timestamp": "00:19",
+                "timestampSec": 19,
+                "activeWindow": "Google Chrome - Shopify Fraud Guard",
+                "eventType": "click",
+                "targetElement": "Fraud Analysis Panel",
+                "confidence": 0.95,
+                "frameRef": "frame_19",
+                "ocrHighlights": [
+                  "Risk Level: LOW"
+                ]
+              },
+              {
+                "timestamp": "00:26",
+                "timestampSec": 26,
+                "activeWindow": "Google Chrome - Stripe Dashboard",
+                "eventType": "navigate",
+                "targetElement": "Payment Intent #pi_3N92jkdlsw92",
+                "confidence": 0.99,
+                "frameRef": "frame_26",
+                "ocrHighlights": [
+                  "$142.50",
+                  "Succeeded"
+                ]
+              },
+              {
+                "timestamp": "00:37",
+                "timestampSec": 37,
+                "activeWindow": "Google Chrome - QuickBooks Online - Invoicing",
+                "eventType": "type",
+                "targetElement": "Invoice Line Items Form",
+                "confidence": 0.96,
+                "frameRef": "frame_37",
+                "ocrHighlights": [
+                  "Invoice #INV-2026-1049",
+                  "$142.50"
+                ]
+              },
+              {
+                "timestamp": "00:48",
+                "timestampSec": 48,
+                "activeWindow": "Google Chrome - Google Sheets",
+                "eventType": "type",
+                "targetElement": "Row A42:F42",
+                "confidence": 0.97,
+                "frameRef": "frame_48",
+                "ocrHighlights": [
+                  "#9831",
+                  "David Kramer",
+                  "COMPLETED"
+                ]
+              },
+              {
+                "timestamp": "00:55",
+                "timestampSec": 55,
+                "activeWindow": "Google Chrome - SendGrid Email Composer",
+                "eventType": "click",
+                "targetElement": "Send Template Button",
+                "confidence": 0.98,
+                "frameRef": "frame_55",
+                "ocrHighlights": [
+                  "Order Confirmed",
+                  "INV-2026-1049"
+                ]
+              }
+            ],
+            "evidence": [
+              {
+                "id": "ev_proc_quickcart_order_1",
+                "frameId": "frame_04",
+                "timestamp": "00:04",
+                "screenshotUrl": "/demo/order_inbox.png",
+                "detectedElements": [
+                  {
+                    "label": "Shopify Admin Sidebar",
+                    "box": [
+                      0,
+                      0,
+                      100,
+                      20
+                    ],
+                    "confidence": 0.99
+                  },
+                  {
+                    "label": "Unfulfilled Order #9831 Row",
+                    "box": [
+                      22,
+                      22,
+                      34,
+                      98
+                    ],
+                    "confidence": 0.97
+                  }
+                ],
+                "activeWindow": "Google Chrome - Shopify Admin - Orders",
+                "ocrText": [
+                  "Orders",
+                  "Unfulfilled",
+                  "#9831",
+                  "David K.",
+                  "$142.50",
+                  "Paid"
+                ]
+              },
+              {
+                "id": "ev_proc_quickcart_order_2",
+                "frameId": "frame_11",
+                "timestamp": "00:11",
+                "screenshotUrl": "/demo/order_detail.png",
+                "detectedElements": [
+                  {
+                    "label": "Order Summary Card",
+                    "box": [
+                      15,
+                      20,
+                      70,
+                      75
+                    ],
+                    "confidence": 0.98
+                  },
+                  {
+                    "label": "Customer Contact Info",
+                    "box": [
+                      15,
+                      78,
+                      45,
+                      98
+                    ],
+                    "confidence": 0.96
+                  }
+                ],
+                "activeWindow": "Google Chrome - Shopify Admin - Order #9831",
+                "ocrText": [
+                  "Order #9831",
+                  "Items: 2",
+                  "Wireless Headphones Pro x1",
+                  "Replacement Ear Cushions x1"
+                ]
+              },
+              {
+                "id": "ev_proc_quickcart_order_3",
+                "frameId": "frame_19",
+                "timestamp": "00:19",
+                "screenshotUrl": "/demo/risk_assessment.png",
+                "detectedElements": [
+                  {
+                    "label": "Shopify Fraud Analysis Card",
+                    "box": [
+                      10,
+                      10,
+                      80,
+                      90
+                    ],
+                    "confidence": 0.95
+                  }
+                ],
+                "activeWindow": "Google Chrome - Shopify Fraud Guard",
+                "ocrText": [
+                  "Risk Level: LOW",
+                  "CVV Match: PASS",
+                  "Address Match: PASS"
+                ]
+              },
+              {
+                "id": "ev_proc_quickcart_order_4",
+                "frameId": "frame_26",
+                "timestamp": "00:26",
+                "screenshotUrl": "/demo/stripe_payment.png",
+                "detectedElements": [
+                  {
+                    "label": "Stripe Payment Intent Card",
+                    "box": [
+                      20,
+                      25,
+                      65,
+                      85
+                    ],
+                    "confidence": 0.99
+                  }
+                ],
+                "activeWindow": "Google Chrome - Stripe Dashboard",
+                "ocrText": [
+                  "Payment Intent: pi_3N92jkdlsw92",
+                  "Amount: $142.50",
+                  "Status: Succeeded"
+                ]
+              },
+              {
+                "id": "ev_proc_quickcart_order_5",
+                "frameId": "frame_37",
+                "timestamp": "00:37",
+                "screenshotUrl": "/demo/quickbooks_invoice.png",
+                "detectedElements": [
+                  {
+                    "label": "QuickBooks Invoice Form",
+                    "box": [
+                      10,
+                      15,
+                      90,
+                      85
+                    ],
+                    "confidence": 0.97
+                  }
+                ],
+                "activeWindow": "Google Chrome - QuickBooks Online - Invoicing",
+                "ocrText": [
+                  "Invoice #INV-2026-1049",
+                  "Subtotal: $130.00",
+                  "Tax: $12.50",
+                  "Total: $142.50"
+                ]
+              },
+              {
+                "id": "ev_proc_quickcart_order_6",
+                "frameId": "frame_48",
+                "timestamp": "00:48",
+                "screenshotUrl": "/demo/google_sheet.png",
+                "detectedElements": [
+                  {
+                    "label": "Spreadsheet Grid Row Entry",
+                    "box": [
+                      15,
+                      5,
+                      30,
+                      95
+                    ],
+                    "confidence": 0.97
+                  }
+                ],
+                "activeWindow": "Google Chrome - Google Sheets (Orders DB)",
+                "ocrText": [
+                  "2026-08-10",
+                  "#9831",
+                  "David Kramer",
+                  "$142.50",
+                  "COMPLETED"
+                ]
+              },
+              {
+                "id": "ev_proc_quickcart_order_7",
+                "frameId": "frame_55",
+                "timestamp": "00:55",
+                "screenshotUrl": "/demo/email_confirm.png",
+                "detectedElements": [
+                  {
+                    "label": "Email Template Preview Card",
+                    "box": [
+                      10,
+                      15,
+                      85,
+                      85
+                    ],
+                    "confidence": 0.98
+                  }
+                ],
+                "activeWindow": "Google Chrome - SendGrid Email Composer",
+                "ocrText": [
+                  "QuickCart Store — Order Confirmed",
+                  "David Kramer",
+                  "INV-2026-1049"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "tl_1789561177093_cyl9r",
+          "agentType": "process_analyst",
+          "phase": "4. PROCESS_EXTRACTION",
+          "message": "Process Analyst Agent translating raw interactions into business process nodes and dependency edges.",
+          "timestamp": "2026-09-16T12:19:37.093Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_1789561177094_q1eky",
+          "agentType": "process_analyst",
+          "phase": "4. PROCESS_EXTRACTION_COMPLETE",
+          "message": "Process Analyst constructed a 7-step process graph with 6 state edges. Estimated automation feasibility is 94%, eliminating an estimated 7.5 minutes of manual labor per order.",
+          "timestamp": "2026-09-16T12:19:37.094Z",
+          "level": "success",
+          "data": {
+            "processSummary": "Linear multi-system e-commerce order ingestion, fraud verification, accounting invoice generation, and customer dispatch pipeline.",
+            "nodes": [
+              {
+                "id": "proc_quickcart_order_step_1",
+                "label": "New Order Notification",
+                "application": "Shopify Store",
+                "action": "Review incoming customer order notification in dashboard inbox",
+                "timestamp": "00:04",
+                "timestampSec": 4,
+                "screenshot": "/demo/order_inbox.png",
+                "confidence": 0.98,
+                "automationMethod": "api",
+                "apiEndpoint": "POST /api/webhooks/shopify/orders/create",
+                "suggestedTools": [
+                  "Shopify Webhooks",
+                  "REST Admin API"
+                ],
+                "parameters": {
+                  "event": "orders/create",
+                  "payloadId": "order_9831"
+                },
+                "notes": "Can be replaced 100% with direct Shopify webhook subscription"
+              },
+              {
+                "id": "proc_quickcart_order_step_2",
+                "label": "Open Store Dashboard",
+                "application": "Shopify Store",
+                "action": "Navigate to Orders view and open pending Order #9831",
+                "timestamp": "00:11",
+                "timestampSec": 11,
+                "screenshot": "/demo/order_detail.png",
+                "confidence": 0.96,
+                "automationMethod": "api",
+                "apiEndpoint": "GET /admin/api/2026-04/orders/9831.json",
+                "suggestedTools": [
+                  "Shopify SDK"
+                ],
+                "parameters": {
+                  "orderId": "9831"
+                },
+                "notes": "API provides line items, customer name, shipping address immediately"
+              },
+              {
+                "id": "proc_quickcart_order_step_3",
+                "label": "Check Customer Details & Risk",
+                "application": "Shopify Store",
+                "action": "Inspect customer fraud risk score and address validation flags",
+                "timestamp": "00:19",
+                "timestampSec": 19,
+                "screenshot": "/demo/risk_assessment.png",
+                "confidence": 0.94,
+                "automationMethod": "api",
+                "apiEndpoint": "GET /admin/api/2026-04/orders/9831/risks.json",
+                "suggestedTools": [
+                  "Shopify Fraud Analysis API"
+                ],
+                "parameters": {
+                  "threshold": "low"
+                },
+                "notes": "Rule: If risk recommendation is \"accept\", proceed automatically; if \"investigate\", route to human"
+              },
+              {
+                "id": "proc_quickcart_order_step_4",
+                "label": "Check Payment Status",
+                "application": "Stripe Payments",
+                "action": "Verify transaction capture ID and 3D Secure verification status",
+                "timestamp": "00:26",
+                "timestampSec": 26,
+                "screenshot": "/demo/stripe_payment.png",
+                "confidence": 0.99,
+                "automationMethod": "api",
+                "apiEndpoint": "GET /v1/payment_intents/pi_3N92jkdlsw92",
+                "suggestedTools": [
+                  "Stripe Node SDK"
+                ],
+                "parameters": {
+                  "status": "succeeded"
+                },
+                "notes": "Payment confirmed via payment_intent.succeeded event"
+              },
+              {
+                "id": "proc_quickcart_order_step_5",
+                "label": "Create Invoice in QuickBooks",
+                "application": "QuickBooks Online",
+                "action": "Enter item SKU, price, sales tax breakdown and generate invoice PDF",
+                "timestamp": "00:37",
+                "timestampSec": 37,
+                "screenshot": "/demo/quickbooks_invoice.png",
+                "confidence": 0.95,
+                "automationMethod": "api",
+                "apiEndpoint": "POST /v3/company/QC-98421/invoice",
+                "suggestedTools": [
+                  "Intuit QuickBooks API"
+                ],
+                "parameters": {
+                  "customerRef": "QC-Cust-441",
+                  "autoSend": "false"
+                },
+                "notes": "Replaces 4 minutes of manual bookkeeping data entry per order"
+              },
+              {
+                "id": "proc_quickcart_order_step_6",
+                "label": "Update Master Order Sheet",
+                "application": "Google Sheets",
+                "action": "Append order row to Logistics Tracking spreadsheet",
+                "timestamp": "00:48",
+                "timestampSec": 48,
+                "screenshot": "/demo/google_sheet.png",
+                "confidence": 0.97,
+                "automationMethod": "api",
+                "apiEndpoint": "POST https://sheets.googleapis.com/v4/spreadsheets/1Bxi.../values:append",
+                "suggestedTools": [
+                  "Google Sheets API v4"
+                ],
+                "parameters": {
+                  "range": "Orders!A:H",
+                  "valueInputOption": "USER_ENTERED"
+                },
+                "notes": "Appends [Date, Order#, Customer, Amount, Status, TrackingID]"
+              },
+              {
+                "id": "proc_quickcart_order_step_7",
+                "label": "Send Confirmation Email",
+                "application": "SendGrid Email API",
+                "action": "Trigger transactional email with PDF invoice attachment and tracking link",
+                "timestamp": "00:55",
+                "timestampSec": 55,
+                "screenshot": "/demo/email_confirm.png",
+                "confidence": 0.98,
+                "automationMethod": "api",
+                "apiEndpoint": "POST /v3/mail/send",
+                "suggestedTools": [
+                  "SendGrid Mailer",
+                  "Postmark"
+                ],
+                "parameters": {
+                  "template_id": "d-98427189a0"
+                },
+                "notes": "Includes order summary and delivery window details"
+              }
+            ],
+            "edges": [
+              {
+                "id": "e1_2",
+                "source": "proc_quickcart_order_step_1",
+                "target": "proc_quickcart_order_step_2",
+                "label": "Order ID"
+              },
+              {
+                "id": "e2_3",
+                "source": "proc_quickcart_order_step_2",
+                "target": "proc_quickcart_order_step_3",
+                "label": "Customer ID"
+              },
+              {
+                "id": "e3_4",
+                "source": "proc_quickcart_order_step_3",
+                "target": "proc_quickcart_order_step_4",
+                "label": "Payment Intent"
+              },
+              {
+                "id": "e4_5",
+                "source": "proc_quickcart_order_step_4",
+                "target": "proc_quickcart_order_step_5",
+                "label": "Line Items"
+              },
+              {
+                "id": "e5_6",
+                "source": "proc_quickcart_order_step_5",
+                "target": "proc_quickcart_order_step_6",
+                "label": "Invoice Num"
+              },
+              {
+                "id": "e6_7",
+                "source": "proc_quickcart_order_step_6",
+                "target": "proc_quickcart_order_step_7",
+                "label": "Tracking & Mail"
+              }
+            ],
+            "totalSteps": 7,
+            "estimatedAutomationFeasibility": 94,
+            "bottlenecks": [
+              "Manual QuickBooks tax calculation and data entry takes 240s per order",
+              "Dual manual logging between QuickBooks and Google Sheets causes sync delays"
+            ]
+          }
+        },
+        {
+          "id": "tl_1789561177095_vp845",
+          "agentType": "software",
+          "phase": "5. SOFTWARE_ANALYSIS",
+          "message": "Software Agent inspecting connected business applications, Developer APIs, webhooks, and repository mappings.",
+          "timestamp": "2026-09-16T12:19:37.095Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_1789561177096_qsrds",
+          "agentType": "software",
+          "phase": "5. SOFTWARE_ANALYSIS_COMPLETE",
+          "message": "Software Agent connected 6 software applications to Developer Tools & APIs. All 7 steps mapped to authenticated API endpoints with 0 browser fallbacks required. Connected to GitHub repo quickcart/store-automations.",
+          "timestamp": "2026-09-16T12:19:37.096Z",
+          "level": "success",
+          "data": {
+            "identifiedSoftware": [
+              {
+                "name": "Shopify Admin API",
+                "category": "e-commerce",
+                "hasPublicApi": true,
+                "detectedEndpoints": [
+                  "GET /admin/api/2026-04/orders/{id}.json",
+                  "GET /admin/api/2026-04/orders/{id}/risks.json",
+                  "POST /admin/api/2026-04/orders/{id}/fulfillments.json"
+                ],
+                "authRequirement": "OAuth2 Bearer / Private App Access Token",
+                "gitRepoLinked": true
+              },
+              {
+                "name": "Stripe Payments API",
+                "category": "payment_gateway",
+                "hasPublicApi": true,
+                "detectedEndpoints": [
+                  "GET /v1/payment_intents/{id}",
+                  "POST /v1/refunds"
+                ],
+                "authRequirement": "Secret API Key (Bearer sk_test_...)",
+                "gitRepoLinked": true
+              },
+              {
+                "name": "Intuit QuickBooks Online v3 API",
+                "category": "accounting",
+                "hasPublicApi": true,
+                "detectedEndpoints": [
+                  "POST /v3/company/{companyId}/invoice",
+                  "GET /v3/company/{companyId}/customer/{id}"
+                ],
+                "authRequirement": "OAuth2 Token Refresh Flow",
+                "gitRepoLinked": false
+              },
+              {
+                "name": "Google Sheets REST API v4",
+                "category": "cloud_spreadsheet",
+                "hasPublicApi": true,
+                "detectedEndpoints": [
+                  "POST /v4/spreadsheets/{id}/values:append"
+                ],
+                "authRequirement": "Service Account JWT / Google Cloud Console OAuth",
+                "gitRepoLinked": false
+              },
+              {
+                "name": "SendGrid Mail API v3",
+                "category": "transactional_email",
+                "hasPublicApi": true,
+                "detectedEndpoints": [
+                  "POST /v3/mail/send"
+                ],
+                "authRequirement": "API Key (SG....)",
+                "gitRepoLinked": true
+              },
+              {
+                "name": "GitHub Repository: quickcart/store-automations",
+                "category": "developer_tools",
+                "hasPublicApi": true,
+                "detectedEndpoints": [
+                  "POST /repos/quickcart/store-automations/dispatches",
+                  "GET /repos/quickcart/store-automations/actions/runs"
+                ],
+                "authRequirement": "GitHub App Installation Token",
+                "gitRepoLinked": true
+              }
+            ],
+            "stepMappings": {
+              "proc_quickcart_order_step_1": {
+                "application": "Shopify Store",
+                "bestAutomationType": "api",
+                "reason": "Shopify Admin REST API provides 100% data parity with UI with zero fragility from HTML DOM changes.",
+                "apiEndpoint": "POST /api/webhooks/shopify/orders/create",
+                "suggestedPackage": "@shopify/shopify-api"
+              },
+              "proc_quickcart_order_step_2": {
+                "application": "Shopify Store",
+                "bestAutomationType": "api",
+                "reason": "Shopify Admin REST API provides 100% data parity with UI with zero fragility from HTML DOM changes.",
+                "apiEndpoint": "GET /admin/api/2026-04/orders/9831.json",
+                "suggestedPackage": "@shopify/shopify-api"
+              },
+              "proc_quickcart_order_step_3": {
+                "application": "Shopify Store",
+                "bestAutomationType": "api",
+                "reason": "Shopify Admin REST API provides 100% data parity with UI with zero fragility from HTML DOM changes.",
+                "apiEndpoint": "GET /admin/api/2026-04/orders/9831/risks.json",
+                "suggestedPackage": "@shopify/shopify-api"
+              },
+              "proc_quickcart_order_step_4": {
+                "application": "Stripe Payments",
+                "bestAutomationType": "api",
+                "reason": "Stripe Webhooks & Node SDK verify payment signatures in sub-200ms without browser rendering.",
+                "apiEndpoint": "GET /v1/payment_intents/:id",
+                "suggestedPackage": "stripe"
+              },
+              "proc_quickcart_order_step_5": {
+                "application": "QuickBooks Online",
+                "bestAutomationType": "api",
+                "reason": "Intuit QuickBooks v3 API eliminates manual invoice data entry.",
+                "apiEndpoint": "POST /v3/company/:id/invoice",
+                "suggestedPackage": "intuit-oauth"
+              },
+              "proc_quickcart_order_step_6": {
+                "application": "Google Sheets",
+                "bestAutomationType": "api",
+                "reason": "Google Sheets API v4 append row endpoint ensures atomic concurrent ledger writes.",
+                "apiEndpoint": "POST /v4/spreadsheets/:id/values:append",
+                "suggestedPackage": "googleapis"
+              },
+              "proc_quickcart_order_step_7": {
+                "application": "SendGrid Email API",
+                "bestAutomationType": "api",
+                "reason": "Direct transactional dispatch API with delivery tracking.",
+                "apiEndpoint": "POST /v3/mail/send",
+                "suggestedPackage": "@sendgrid/mail"
+              }
+            }
+          }
+        },
+        {
+          "id": "tl_1789561177096_h4d26",
+          "agentType": "automation",
+          "phase": "6. AUTOMATION_PLAN",
+          "message": "Automation Agent generating execution plan and compiling TypeScript workflow script.",
+          "timestamp": "2026-09-16T12:19:37.096Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_1789561177097_mu25p",
+          "agentType": "automation",
+          "phase": "6. AUTOMATION_PLAN_COMPLETE",
+          "message": "Automation Agent formulated a 6-step end-to-end automation plan. Generated validated TypeScript workflow code. Awaiting Owner Approval gate before production deployment.",
+          "timestamp": "2026-09-16T12:19:37.097Z",
+          "level": "success",
+          "data": {
+            "workflowName": "QuickCart Order Processing Automation",
+            "steps": [
+              {
+                "id": "wf_step_1",
+                "name": "Ingest Webhook",
+                "type": "api_call",
+                "target": "Shopify Store",
+                "action": "POST /api/webhooks/shopify/orders/create",
+                "method": "api"
+              },
+              {
+                "id": "wf_step_2",
+                "name": "Validate Fraud & Risk Score",
+                "type": "api_call",
+                "target": "Shopify Store",
+                "action": "GET /admin/api/orders/{id}/risks.json",
+                "method": "api"
+              },
+              {
+                "id": "wf_step_3",
+                "name": "Verify Stripe Charge",
+                "type": "api_call",
+                "target": "Stripe Payments",
+                "action": "GET /v1/payment_intents/{id}",
+                "method": "api"
+              },
+              {
+                "id": "wf_step_4",
+                "name": "Generate QuickBooks Invoice",
+                "type": "api_call",
+                "target": "QuickBooks Online",
+                "action": "POST /v3/company/invoice",
+                "method": "api"
+              },
+              {
+                "id": "wf_step_5",
+                "name": "Append Google Sheet Row",
+                "type": "api_call",
+                "target": "Google Sheets",
+                "action": "POST /v4/spreadsheets/{id}/values:append",
+                "method": "api"
+              },
+              {
+                "id": "wf_step_6",
+                "name": "Send Customer Confirmation Email",
+                "type": "api_call",
+                "target": "SendGrid Email API",
+                "action": "POST /v3/mail/send",
+                "method": "api"
+              }
+            ],
+            "requiresHumanApproval": true,
+            "executableScript": "/**\n * QuickCart Automated Order Processing Runner\n * Generated by ProcessMind Automation Agent\n * Verified in Sandbox by ProcessMind Verification Agent\n */\nimport { shopify, stripe, quickbooks, sheets, sendgrid } from '@processmind/connectors';\n\nexport async function processQuickCartOrder(event: { orderId: string; paymentIntentId: string }) {\n  console.log('[ProcessMind] Starting order fulfillment pipeline for Order #' + event.orderId);\n  \n  // 1. Fetch Order details from Shopify API\n  const order = await shopify.getOrder(event.orderId);\n  console.log('[Shopify API] Order retrieved:', order.id, 'Customer:', order.customer.email);\n  \n  // 2. Risk check\n  const risks = await shopify.getOrderRisks(event.orderId);\n  if (risks.recommendation === 'cancel') {\n    throw new Error('High risk order flagged by Shopify: ' + risks.summary);\n  }\n  \n  // 3. Confirm Stripe charge\n  const payment = await stripe.paymentIntents.retrieve(event.paymentIntentId);\n  if (payment.status !== 'succeeded') {\n    throw new Error('Payment capture unverified: ' + payment.status);\n  }\n  \n  // 4. QuickBooks Invoice\n  const invoice = await quickbooks.createInvoice({\n    customer: order.customer.name,\n    items: order.line_items,\n    total: payment.amount_received / 100\n  });\n  console.log('[QuickBooks API] Invoice generated:', invoice.docNumber);\n  \n  // 5. Append to Google Sheets ledger\n  await sheets.appendRow({\n    spreadsheetId: process.env.ORDERS_SHEET_ID,\n    row: [new Date().toISOString(), order.id, order.customer.name, invoice.total, 'COMPLETED']\n  });\n  \n  // 6. SendGrid notification\n  await sendgrid.send({\n    to: order.customer.email,\n    template: 'order-confirmed',\n    data: { orderId: order.id, invoiceUrl: invoice.pdfUrl }\n  });\n  \n  return { success: true, orderId: order.id, invoiceId: invoice.id };\n}",
+            "estimatedExecutionTimeSec": 1.4
+          }
+        },
+        {
+          "id": "tl_1789561177097_g8g41",
+          "agentType": "automation",
+          "phase": "7. AWAITING_APPROVAL",
+          "message": "Human Approval Gate reached: Owner must review and approve generated workflow before sandbox verification or production execution.",
+          "timestamp": "2026-09-16T12:19:37.097Z",
+          "level": "warn",
+          "data": {
+            "workflowId": "wf_1789561177097",
+            "requiresOwnerApproval": true
+          }
+        }
+      ],
+      "createdAt": "2026-09-16T12:19:37.090Z",
+      "updatedAt": "2026-09-16T12:19:37.113Z",
+      "output": {
+        "versionId": "ver_1789561177094",
+        "workflowId": "wf_1789561177097",
+        "summary": "Process Analyst constructed a 7-step process graph with 6 state edges. Estimated automation feasibility is 94%, eliminating an estimated 7.5 minutes of manual labor per order.",
+        "automationSummary": "Automation Agent formulated a 6-step end-to-end automation plan. Generated validated TypeScript workflow code. Awaiting Owner Approval gate before production deployment.",
+        "nodesCount": 7
+      }
+    },
+    {
+      "_id": "run_verif_1789561177126",
+      "businessId": "biz_quickcart",
+      "processId": "proc_quickcart_order",
+      "agentType": "verification",
+      "status": "completed",
+      "timeline": [],
+      "createdAt": "2026-09-16T12:19:37.126Z",
+      "updatedAt": "2026-09-16T12:19:37.128Z",
+      "output": {
+        "verified": true,
+        "testedInSandbox": true,
+        "sandboxEnvironment": "QuickCart Mock Sandbox v2.4 (Isolated Mock API Connectors)",
+        "stepsPassed": 6,
+        "stepsFailed": 0,
+        "executionLogs": [
+          {
+            "timestamp": "14:31:01.100",
+            "stepId": "wf_step_1",
+            "message": "Sandbox: Ingested simulated Shopify webhook for Order #9831 ($142.50)",
+            "level": "info",
+            "screenshot": "/demo/order_inbox.png"
+          },
+          {
+            "timestamp": "14:31:01.320",
+            "stepId": "wf_step_2",
+            "message": "Sandbox: Verified Shopify Fraud Risk score = 0.02 (LOW). Criteria validated.",
+            "level": "success",
+            "screenshot": "/demo/risk_assessment.png"
+          },
+          {
+            "timestamp": "14:31:01.550",
+            "stepId": "wf_step_3",
+            "message": "Sandbox: Stripe test charge pi_3N92jkdlsw92 confirmed. Amount captured: $142.50.",
+            "level": "success",
+            "screenshot": "/demo/stripe_payment.png"
+          },
+          {
+            "timestamp": "14:31:01.890",
+            "stepId": "wf_step_4",
+            "message": "Sandbox: QuickBooks Online API created invoice INV-2026-1049. Tax calculated: $12.50.",
+            "level": "success",
+            "screenshot": "/demo/quickbooks_invoice.png"
+          },
+          {
+            "timestamp": "14:31:02.110",
+            "stepId": "wf_step_5",
+            "message": "Sandbox: Google Sheets API appended row 43 to Orders Tracking spreadsheet.",
+            "level": "success",
+            "screenshot": "/demo/google_sheet.png"
+          },
+          {
+            "timestamp": "14:31:02.380",
+            "stepId": "wf_step_6",
+            "message": "Sandbox: SendGrid mail mock sent tracking email to david.kramer@techstudio.com.",
+            "level": "success",
+            "screenshot": "/demo/email_confirm.png"
+          }
+        ],
+        "verificationScreenshots": [
+          "/demo/order_inbox.png",
+          "/demo/risk_assessment.png",
+          "/demo/stripe_payment.png",
+          "/demo/quickbooks_invoice.png",
+          "/demo/google_sheet.png",
+          "/demo/email_confirm.png"
+        ],
+        "discrepancies": []
+      }
+    },
+    {
+      "_id": "run_1789561279543",
+      "businessId": "biz_quickcart",
+      "processId": "proc_1789561279532",
+      "agentType": "orchestrator",
+      "status": "needs_approval",
+      "timeline": [
+        {
+          "id": "tl_1789561279545_5t8jo",
+          "agentType": "vision",
+          "phase": "1. RECEIVED",
+          "message": "Received screen recording payload for process \"QuickCart with Employee Excel Shadow Drift\". Validated MP4 container.",
+          "timestamp": "2026-09-16T12:21:19.545Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_1789561279547_fqsg4",
+          "agentType": "vision",
+          "phase": "2. PREPROCESSING",
+          "message": "Sampling video frames at 1 fps with scene-change entropy detection. 42 keyframes extracted.",
+          "timestamp": "2026-09-16T12:21:19.547Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_1789561279550_vtnby",
+          "agentType": "vision",
+          "phase": "3. VISION_ANALYSIS",
+          "message": "Vision Agent scanning visual frames: detecting bounding boxes, window headers, OCR labels, and cursor coordinates.",
+          "timestamp": "2026-09-16T12:21:19.550Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_1789561279552_sexga",
+          "agentType": "vision",
+          "phase": "3. VISION_ANALYSIS_COMPLETE",
+          "message": "Computer Vision analyzed 42 frames across 5 SaaS web applications. Detected 7 sequential user actions with average 97.1% visual confidence.",
+          "timestamp": "2026-09-16T12:21:19.552Z",
+          "level": "success",
+          "data": {
+            "framesExtracted": 42,
+            "applicationsDetected": [
+              "Shopify Admin",
+              "Stripe Dashboard",
+              "QuickBooks Online",
+              "Google Sheets",
+              "SendGrid Email"
+            ],
+            "actionsDetected": [
+              {
+                "timestamp": "00:04",
+                "timestampSec": 4,
+                "activeWindow": "Google Chrome - Shopify Admin - Orders",
+                "eventType": "click",
+                "targetElement": "Table Row #9831",
+                "confidence": 0.97,
+                "frameRef": "frame_04",
+                "ocrHighlights": [
+                  "#9831",
+                  "Unfulfilled",
+                  "$142.50"
+                ]
+              },
+              {
+                "timestamp": "00:11",
+                "timestampSec": 11,
+                "activeWindow": "Google Chrome - Shopify Admin - Order #9831",
+                "eventType": "navigate",
+                "targetElement": "Order Detail View",
+                "confidence": 0.98,
+                "frameRef": "frame_11",
+                "ocrHighlights": [
+                  "Wireless Studio Headphones Pro",
+                  "Velour Ear Cushions"
+                ]
+              },
+              {
+                "timestamp": "00:19",
+                "timestampSec": 19,
+                "activeWindow": "Google Chrome - Shopify Fraud Guard",
+                "eventType": "click",
+                "targetElement": "Fraud Analysis Panel",
+                "confidence": 0.95,
+                "frameRef": "frame_19",
+                "ocrHighlights": [
+                  "Risk Level: LOW"
+                ]
+              },
+              {
+                "timestamp": "00:26",
+                "timestampSec": 26,
+                "activeWindow": "Google Chrome - Stripe Dashboard",
+                "eventType": "navigate",
+                "targetElement": "Payment Intent #pi_3N92jkdlsw92",
+                "confidence": 0.99,
+                "frameRef": "frame_26",
+                "ocrHighlights": [
+                  "$142.50",
+                  "Succeeded"
+                ]
+              },
+              {
+                "timestamp": "00:37",
+                "timestampSec": 37,
+                "activeWindow": "Google Chrome - QuickBooks Online - Invoicing",
+                "eventType": "type",
+                "targetElement": "Invoice Line Items Form",
+                "confidence": 0.96,
+                "frameRef": "frame_37",
+                "ocrHighlights": [
+                  "Invoice #INV-2026-1049",
+                  "$142.50"
+                ]
+              },
+              {
+                "timestamp": "00:48",
+                "timestampSec": 48,
+                "activeWindow": "Google Chrome - Google Sheets",
+                "eventType": "type",
+                "targetElement": "Row A42:F42",
+                "confidence": 0.97,
+                "frameRef": "frame_48",
+                "ocrHighlights": [
+                  "#9831",
+                  "David Kramer",
+                  "COMPLETED"
+                ]
+              },
+              {
+                "timestamp": "00:55",
+                "timestampSec": 55,
+                "activeWindow": "Google Chrome - SendGrid Email Composer",
+                "eventType": "click",
+                "targetElement": "Send Template Button",
+                "confidence": 0.98,
+                "frameRef": "frame_55",
+                "ocrHighlights": [
+                  "Order Confirmed",
+                  "INV-2026-1049"
+                ]
+              }
+            ],
+            "evidence": [
+              {
+                "id": "ev_proc_1789561279532_1",
+                "frameId": "frame_04",
+                "timestamp": "00:04",
+                "screenshotUrl": "/demo/order_inbox.png",
+                "detectedElements": [
+                  {
+                    "label": "Shopify Admin Sidebar",
+                    "box": [
+                      0,
+                      0,
+                      100,
+                      20
+                    ],
+                    "confidence": 0.99
+                  },
+                  {
+                    "label": "Unfulfilled Order #9831 Row",
+                    "box": [
+                      22,
+                      22,
+                      34,
+                      98
+                    ],
+                    "confidence": 0.97
+                  }
+                ],
+                "activeWindow": "Google Chrome - Shopify Admin - Orders",
+                "ocrText": [
+                  "Orders",
+                  "Unfulfilled",
+                  "#9831",
+                  "David K.",
+                  "$142.50",
+                  "Paid"
+                ]
+              },
+              {
+                "id": "ev_proc_1789561279532_2",
+                "frameId": "frame_11",
+                "timestamp": "00:11",
+                "screenshotUrl": "/demo/order_detail.png",
+                "detectedElements": [
+                  {
+                    "label": "Order Summary Card",
+                    "box": [
+                      15,
+                      20,
+                      70,
+                      75
+                    ],
+                    "confidence": 0.98
+                  },
+                  {
+                    "label": "Customer Contact Info",
+                    "box": [
+                      15,
+                      78,
+                      45,
+                      98
+                    ],
+                    "confidence": 0.96
+                  }
+                ],
+                "activeWindow": "Google Chrome - Shopify Admin - Order #9831",
+                "ocrText": [
+                  "Order #9831",
+                  "Items: 2",
+                  "Wireless Headphones Pro x1",
+                  "Replacement Ear Cushions x1"
+                ]
+              },
+              {
+                "id": "ev_proc_1789561279532_3",
+                "frameId": "frame_19",
+                "timestamp": "00:19",
+                "screenshotUrl": "/demo/risk_assessment.png",
+                "detectedElements": [
+                  {
+                    "label": "Shopify Fraud Analysis Card",
+                    "box": [
+                      10,
+                      10,
+                      80,
+                      90
+                    ],
+                    "confidence": 0.95
+                  }
+                ],
+                "activeWindow": "Google Chrome - Shopify Fraud Guard",
+                "ocrText": [
+                  "Risk Level: LOW",
+                  "CVV Match: PASS",
+                  "Address Match: PASS"
+                ]
+              },
+              {
+                "id": "ev_proc_1789561279532_4",
+                "frameId": "frame_26",
+                "timestamp": "00:26",
+                "screenshotUrl": "/demo/stripe_payment.png",
+                "detectedElements": [
+                  {
+                    "label": "Stripe Payment Intent Card",
+                    "box": [
+                      20,
+                      25,
+                      65,
+                      85
+                    ],
+                    "confidence": 0.99
+                  }
+                ],
+                "activeWindow": "Google Chrome - Stripe Dashboard",
+                "ocrText": [
+                  "Payment Intent: pi_3N92jkdlsw92",
+                  "Amount: $142.50",
+                  "Status: Succeeded"
+                ]
+              },
+              {
+                "id": "ev_proc_1789561279532_5",
+                "frameId": "frame_37",
+                "timestamp": "00:37",
+                "screenshotUrl": "/demo/quickbooks_invoice.png",
+                "detectedElements": [
+                  {
+                    "label": "QuickBooks Invoice Form",
+                    "box": [
+                      10,
+                      15,
+                      90,
+                      85
+                    ],
+                    "confidence": 0.97
+                  }
+                ],
+                "activeWindow": "Google Chrome - QuickBooks Online - Invoicing",
+                "ocrText": [
+                  "Invoice #INV-2026-1049",
+                  "Subtotal: $130.00",
+                  "Tax: $12.50",
+                  "Total: $142.50"
+                ]
+              },
+              {
+                "id": "ev_proc_1789561279532_6",
+                "frameId": "frame_48",
+                "timestamp": "00:48",
+                "screenshotUrl": "/demo/google_sheet.png",
+                "detectedElements": [
+                  {
+                    "label": "Spreadsheet Grid Row Entry",
+                    "box": [
+                      15,
+                      5,
+                      30,
+                      95
+                    ],
+                    "confidence": 0.97
+                  }
+                ],
+                "activeWindow": "Google Chrome - Google Sheets (Orders DB)",
+                "ocrText": [
+                  "2026-08-10",
+                  "#9831",
+                  "David Kramer",
+                  "$142.50",
+                  "COMPLETED"
+                ]
+              },
+              {
+                "id": "ev_proc_1789561279532_7",
+                "frameId": "frame_55",
+                "timestamp": "00:55",
+                "screenshotUrl": "/demo/email_confirm.png",
+                "detectedElements": [
+                  {
+                    "label": "Email Template Preview Card",
+                    "box": [
+                      10,
+                      15,
+                      85,
+                      85
+                    ],
+                    "confidence": 0.98
+                  }
+                ],
+                "activeWindow": "Google Chrome - SendGrid Email Composer",
+                "ocrText": [
+                  "QuickCart Store — Order Confirmed",
+                  "David Kramer",
+                  "INV-2026-1049"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "tl_1789561279553_yr6w2",
+          "agentType": "process_analyst",
+          "phase": "4. PROCESS_EXTRACTION",
+          "message": "Process Analyst Agent translating raw interactions into business process nodes and dependency edges.",
+          "timestamp": "2026-09-16T12:21:19.553Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_1789561279554_ito03",
+          "agentType": "process_analyst",
+          "phase": "4. PROCESS_EXTRACTION_COMPLETE",
+          "message": "Process Analyst constructed a 7-step process graph with 6 state edges. Estimated automation feasibility is 94%, eliminating an estimated 7.5 minutes of manual labor per order.",
+          "timestamp": "2026-09-16T12:21:19.554Z",
+          "level": "success",
+          "data": {
+            "processSummary": "Linear multi-system e-commerce order ingestion, fraud verification, accounting invoice generation, and customer dispatch pipeline.",
+            "nodes": [
+              {
+                "id": "proc_1789561279532_step_1",
+                "label": "New Order Notification",
+                "application": "Shopify Store",
+                "action": "Review incoming customer order notification in dashboard inbox",
+                "timestamp": "00:04",
+                "timestampSec": 4,
+                "screenshot": "/demo/order_inbox.png",
+                "confidence": 0.98,
+                "automationMethod": "api",
+                "apiEndpoint": "POST /api/webhooks/shopify/orders/create",
+                "suggestedTools": [
+                  "Shopify Webhooks",
+                  "REST Admin API"
+                ],
+                "parameters": {
+                  "event": "orders/create",
+                  "payloadId": "order_9831"
+                },
+                "notes": "Can be replaced 100% with direct Shopify webhook subscription"
+              },
+              {
+                "id": "proc_1789561279532_step_2",
+                "label": "Open Store Dashboard",
+                "application": "Shopify Store",
+                "action": "Navigate to Orders view and open pending Order #9831",
+                "timestamp": "00:11",
+                "timestampSec": 11,
+                "screenshot": "/demo/order_detail.png",
+                "confidence": 0.96,
+                "automationMethod": "api",
+                "apiEndpoint": "GET /admin/api/2026-04/orders/9831.json",
+                "suggestedTools": [
+                  "Shopify SDK"
+                ],
+                "parameters": {
+                  "orderId": "9831"
+                },
+                "notes": "API provides line items, customer name, shipping address immediately"
+              },
+              {
+                "id": "proc_1789561279532_step_3",
+                "label": "Check Customer Details & Risk",
+                "application": "Shopify Store",
+                "action": "Inspect customer fraud risk score and address validation flags",
+                "timestamp": "00:19",
+                "timestampSec": 19,
+                "screenshot": "/demo/risk_assessment.png",
+                "confidence": 0.94,
+                "automationMethod": "api",
+                "apiEndpoint": "GET /admin/api/2026-04/orders/9831/risks.json",
+                "suggestedTools": [
+                  "Shopify Fraud Analysis API"
+                ],
+                "parameters": {
+                  "threshold": "low"
+                },
+                "notes": "Rule: If risk recommendation is \"accept\", proceed automatically; if \"investigate\", route to human"
+              },
+              {
+                "id": "proc_1789561279532_step_4",
+                "label": "Check Payment Status",
+                "application": "Stripe Payments",
+                "action": "Verify transaction capture ID and 3D Secure verification status",
+                "timestamp": "00:26",
+                "timestampSec": 26,
+                "screenshot": "/demo/stripe_payment.png",
+                "confidence": 0.99,
+                "automationMethod": "api",
+                "apiEndpoint": "GET /v1/payment_intents/pi_3N92jkdlsw92",
+                "suggestedTools": [
+                  "Stripe Node SDK"
+                ],
+                "parameters": {
+                  "status": "succeeded"
+                },
+                "notes": "Payment confirmed via payment_intent.succeeded event"
+              },
+              {
+                "id": "proc_1789561279532_step_5",
+                "label": "Create Invoice in QuickBooks",
+                "application": "QuickBooks Online",
+                "action": "Enter item SKU, price, sales tax breakdown and generate invoice PDF",
+                "timestamp": "00:37",
+                "timestampSec": 37,
+                "screenshot": "/demo/quickbooks_invoice.png",
+                "confidence": 0.95,
+                "automationMethod": "api",
+                "apiEndpoint": "POST /v3/company/QC-98421/invoice",
+                "suggestedTools": [
+                  "Intuit QuickBooks API"
+                ],
+                "parameters": {
+                  "customerRef": "QC-Cust-441",
+                  "autoSend": "false"
+                },
+                "notes": "Replaces 4 minutes of manual bookkeeping data entry per order"
+              },
+              {
+                "id": "proc_1789561279532_step_6",
+                "label": "Update Master Order Sheet",
+                "application": "Google Sheets",
+                "action": "Append order row to Logistics Tracking spreadsheet",
+                "timestamp": "00:48",
+                "timestampSec": 48,
+                "screenshot": "/demo/google_sheet.png",
+                "confidence": 0.97,
+                "automationMethod": "api",
+                "apiEndpoint": "POST https://sheets.googleapis.com/v4/spreadsheets/1Bxi.../values:append",
+                "suggestedTools": [
+                  "Google Sheets API v4"
+                ],
+                "parameters": {
+                  "range": "Orders!A:H",
+                  "valueInputOption": "USER_ENTERED"
+                },
+                "notes": "Appends [Date, Order#, Customer, Amount, Status, TrackingID]"
+              },
+              {
+                "id": "proc_1789561279532_step_7",
+                "label": "Send Confirmation Email",
+                "application": "SendGrid Email API",
+                "action": "Trigger transactional email with PDF invoice attachment and tracking link",
+                "timestamp": "00:55",
+                "timestampSec": 55,
+                "screenshot": "/demo/email_confirm.png",
+                "confidence": 0.98,
+                "automationMethod": "api",
+                "apiEndpoint": "POST /v3/mail/send",
+                "suggestedTools": [
+                  "SendGrid Mailer",
+                  "Postmark"
+                ],
+                "parameters": {
+                  "template_id": "d-98427189a0"
+                },
+                "notes": "Includes order summary and delivery window details"
+              }
+            ],
+            "edges": [
+              {
+                "id": "e1_2",
+                "source": "proc_1789561279532_step_1",
+                "target": "proc_1789561279532_step_2",
+                "label": "Order ID"
+              },
+              {
+                "id": "e2_3",
+                "source": "proc_1789561279532_step_2",
+                "target": "proc_1789561279532_step_3",
+                "label": "Customer ID"
+              },
+              {
+                "id": "e3_4",
+                "source": "proc_1789561279532_step_3",
+                "target": "proc_1789561279532_step_4",
+                "label": "Payment Intent"
+              },
+              {
+                "id": "e4_5",
+                "source": "proc_1789561279532_step_4",
+                "target": "proc_1789561279532_step_5",
+                "label": "Line Items"
+              },
+              {
+                "id": "e5_6",
+                "source": "proc_1789561279532_step_5",
+                "target": "proc_1789561279532_step_6",
+                "label": "Invoice Num"
+              },
+              {
+                "id": "e6_7",
+                "source": "proc_1789561279532_step_6",
+                "target": "proc_1789561279532_step_7",
+                "label": "Tracking & Mail"
+              }
+            ],
+            "totalSteps": 7,
+            "estimatedAutomationFeasibility": 94,
+            "bottlenecks": [
+              "Manual QuickBooks tax calculation and data entry takes 240s per order",
+              "Dual manual logging between QuickBooks and Google Sheets causes sync delays"
+            ]
+          }
+        },
+        {
+          "id": "tl_1789561279558_ehiz5",
+          "agentType": "software",
+          "phase": "5. SOFTWARE_ANALYSIS",
+          "message": "Software Agent inspecting connected business applications, Developer APIs, webhooks, and repository mappings.",
+          "timestamp": "2026-09-16T12:21:19.558Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_1789561279559_5qaow",
+          "agentType": "software",
+          "phase": "5. SOFTWARE_ANALYSIS_COMPLETE",
+          "message": "Software Agent connected 6 software applications to Developer Tools & APIs. All 7 steps mapped to authenticated API endpoints with 0 browser fallbacks required. Connected to GitHub repo quickcart/store-automations.",
+          "timestamp": "2026-09-16T12:21:19.559Z",
+          "level": "success",
+          "data": {
+            "identifiedSoftware": [
+              {
+                "name": "Shopify Admin API",
+                "category": "e-commerce",
+                "hasPublicApi": true,
+                "detectedEndpoints": [
+                  "GET /admin/api/2026-04/orders/{id}.json",
+                  "GET /admin/api/2026-04/orders/{id}/risks.json",
+                  "POST /admin/api/2026-04/orders/{id}/fulfillments.json"
+                ],
+                "authRequirement": "OAuth2 Bearer / Private App Access Token",
+                "gitRepoLinked": true
+              },
+              {
+                "name": "Stripe Payments API",
+                "category": "payment_gateway",
+                "hasPublicApi": true,
+                "detectedEndpoints": [
+                  "GET /v1/payment_intents/{id}",
+                  "POST /v1/refunds"
+                ],
+                "authRequirement": "Secret API Key (Bearer sk_test_...)",
+                "gitRepoLinked": true
+              },
+              {
+                "name": "Intuit QuickBooks Online v3 API",
+                "category": "accounting",
+                "hasPublicApi": true,
+                "detectedEndpoints": [
+                  "POST /v3/company/{companyId}/invoice",
+                  "GET /v3/company/{companyId}/customer/{id}"
+                ],
+                "authRequirement": "OAuth2 Token Refresh Flow",
+                "gitRepoLinked": false
+              },
+              {
+                "name": "Google Sheets REST API v4",
+                "category": "cloud_spreadsheet",
+                "hasPublicApi": true,
+                "detectedEndpoints": [
+                  "POST /v4/spreadsheets/{id}/values:append"
+                ],
+                "authRequirement": "Service Account JWT / Google Cloud Console OAuth",
+                "gitRepoLinked": false
+              },
+              {
+                "name": "SendGrid Mail API v3",
+                "category": "transactional_email",
+                "hasPublicApi": true,
+                "detectedEndpoints": [
+                  "POST /v3/mail/send"
+                ],
+                "authRequirement": "API Key (SG....)",
+                "gitRepoLinked": true
+              },
+              {
+                "name": "GitHub Repository: quickcart/store-automations",
+                "category": "developer_tools",
+                "hasPublicApi": true,
+                "detectedEndpoints": [
+                  "POST /repos/quickcart/store-automations/dispatches",
+                  "GET /repos/quickcart/store-automations/actions/runs"
+                ],
+                "authRequirement": "GitHub App Installation Token",
+                "gitRepoLinked": true
+              }
+            ],
+            "stepMappings": {
+              "proc_1789561279532_step_1": {
+                "application": "Shopify Store",
+                "bestAutomationType": "api",
+                "reason": "Shopify Admin REST API provides 100% data parity with UI with zero fragility from HTML DOM changes.",
+                "apiEndpoint": "POST /api/webhooks/shopify/orders/create",
+                "suggestedPackage": "@shopify/shopify-api"
+              },
+              "proc_1789561279532_step_2": {
+                "application": "Shopify Store",
+                "bestAutomationType": "api",
+                "reason": "Shopify Admin REST API provides 100% data parity with UI with zero fragility from HTML DOM changes.",
+                "apiEndpoint": "GET /admin/api/2026-04/orders/9831.json",
+                "suggestedPackage": "@shopify/shopify-api"
+              },
+              "proc_1789561279532_step_3": {
+                "application": "Shopify Store",
+                "bestAutomationType": "api",
+                "reason": "Shopify Admin REST API provides 100% data parity with UI with zero fragility from HTML DOM changes.",
+                "apiEndpoint": "GET /admin/api/2026-04/orders/9831/risks.json",
+                "suggestedPackage": "@shopify/shopify-api"
+              },
+              "proc_1789561279532_step_4": {
+                "application": "Stripe Payments",
+                "bestAutomationType": "api",
+                "reason": "Stripe Webhooks & Node SDK verify payment signatures in sub-200ms without browser rendering.",
+                "apiEndpoint": "GET /v1/payment_intents/:id",
+                "suggestedPackage": "stripe"
+              },
+              "proc_1789561279532_step_5": {
+                "application": "QuickBooks Online",
+                "bestAutomationType": "api",
+                "reason": "Intuit QuickBooks v3 API eliminates manual invoice data entry.",
+                "apiEndpoint": "POST /v3/company/:id/invoice",
+                "suggestedPackage": "intuit-oauth"
+              },
+              "proc_1789561279532_step_6": {
+                "application": "Google Sheets",
+                "bestAutomationType": "api",
+                "reason": "Google Sheets API v4 append row endpoint ensures atomic concurrent ledger writes.",
+                "apiEndpoint": "POST /v4/spreadsheets/:id/values:append",
+                "suggestedPackage": "googleapis"
+              },
+              "proc_1789561279532_step_7": {
+                "application": "SendGrid Email API",
+                "bestAutomationType": "api",
+                "reason": "Direct transactional dispatch API with delivery tracking.",
+                "apiEndpoint": "POST /v3/mail/send",
+                "suggestedPackage": "@sendgrid/mail"
+              }
+            }
+          }
+        },
+        {
+          "id": "tl_1789561279560_jd3mq",
+          "agentType": "automation",
+          "phase": "6. AUTOMATION_PLAN",
+          "message": "Automation Agent generating execution plan and compiling TypeScript workflow script.",
+          "timestamp": "2026-09-16T12:21:19.560Z",
+          "level": "info"
+        },
+        {
+          "id": "tl_1789561279561_gkiew",
+          "agentType": "automation",
+          "phase": "6. AUTOMATION_PLAN_COMPLETE",
+          "message": "Automation Agent formulated a 6-step end-to-end automation plan. Generated validated TypeScript workflow code. Awaiting Owner Approval gate before production deployment.",
+          "timestamp": "2026-09-16T12:21:19.561Z",
+          "level": "success",
+          "data": {
+            "workflowName": "QuickCart Order Processing Automation",
+            "steps": [
+              {
+                "id": "wf_step_1",
+                "name": "Ingest Webhook",
+                "type": "api_call",
+                "target": "Shopify Store",
+                "action": "POST /api/webhooks/shopify/orders/create",
+                "method": "api"
+              },
+              {
+                "id": "wf_step_2",
+                "name": "Validate Fraud & Risk Score",
+                "type": "api_call",
+                "target": "Shopify Store",
+                "action": "GET /admin/api/orders/{id}/risks.json",
+                "method": "api"
+              },
+              {
+                "id": "wf_step_3",
+                "name": "Verify Stripe Charge",
+                "type": "api_call",
+                "target": "Stripe Payments",
+                "action": "GET /v1/payment_intents/{id}",
+                "method": "api"
+              },
+              {
+                "id": "wf_step_4",
+                "name": "Generate QuickBooks Invoice",
+                "type": "api_call",
+                "target": "QuickBooks Online",
+                "action": "POST /v3/company/invoice",
+                "method": "api"
+              },
+              {
+                "id": "wf_step_5",
+                "name": "Append Google Sheet Row",
+                "type": "api_call",
+                "target": "Google Sheets",
+                "action": "POST /v4/spreadsheets/{id}/values:append",
+                "method": "api"
+              },
+              {
+                "id": "wf_step_6",
+                "name": "Send Customer Confirmation Email",
+                "type": "api_call",
+                "target": "SendGrid Email API",
+                "action": "POST /v3/mail/send",
+                "method": "api"
+              }
+            ],
+            "requiresHumanApproval": true,
+            "executableScript": "/**\n * QuickCart Automated Order Processing Runner\n * Generated by ProcessMind Automation Agent\n * Verified in Sandbox by ProcessMind Verification Agent\n */\nimport { shopify, stripe, quickbooks, sheets, sendgrid } from '@processmind/connectors';\n\nexport async function processQuickCartOrder(event: { orderId: string; paymentIntentId: string }) {\n  console.log('[ProcessMind] Starting order fulfillment pipeline for Order #' + event.orderId);\n  \n  // 1. Fetch Order details from Shopify API\n  const order = await shopify.getOrder(event.orderId);\n  console.log('[Shopify API] Order retrieved:', order.id, 'Customer:', order.customer.email);\n  \n  // 2. Risk check\n  const risks = await shopify.getOrderRisks(event.orderId);\n  if (risks.recommendation === 'cancel') {\n    throw new Error('High risk order flagged by Shopify: ' + risks.summary);\n  }\n  \n  // 3. Confirm Stripe charge\n  const payment = await stripe.paymentIntents.retrieve(event.paymentIntentId);\n  if (payment.status !== 'succeeded') {\n    throw new Error('Payment capture unverified: ' + payment.status);\n  }\n  \n  // 4. QuickBooks Invoice\n  const invoice = await quickbooks.createInvoice({\n    customer: order.customer.name,\n    items: order.line_items,\n    total: payment.amount_received / 100\n  });\n  console.log('[QuickBooks API] Invoice generated:', invoice.docNumber);\n  \n  // 5. Append to Google Sheets ledger\n  await sheets.appendRow({\n    spreadsheetId: process.env.ORDERS_SHEET_ID,\n    row: [new Date().toISOString(), order.id, order.customer.name, invoice.total, 'COMPLETED']\n  });\n  \n  // 6. SendGrid notification\n  await sendgrid.send({\n    to: order.customer.email,\n    template: 'order-confirmed',\n    data: { orderId: order.id, invoiceUrl: invoice.pdfUrl }\n  });\n  \n  return { success: true, orderId: order.id, invoiceId: invoice.id };\n}",
+            "estimatedExecutionTimeSec": 1.4
+          }
+        },
+        {
+          "id": "tl_1789561279563_ocu0k",
+          "agentType": "automation",
+          "phase": "7. AWAITING_APPROVAL",
+          "message": "Human Approval Gate reached: Owner must review and approve generated workflow before sandbox verification or production execution.",
+          "timestamp": "2026-09-16T12:21:19.563Z",
+          "level": "warn",
+          "data": {
+            "workflowId": "wf_1789561279562",
+            "requiresOwnerApproval": true
+          }
+        }
+      ],
+      "createdAt": "2026-09-16T12:21:19.543Z",
+      "updatedAt": "2026-09-16T12:21:19.565Z",
+      "output": {
+        "versionId": "ver_1789561279556",
+        "workflowId": "wf_1789561279562",
+        "summary": "Process Analyst constructed a 7-step process graph with 6 state edges. Estimated automation feasibility is 94%, eliminating an estimated 7.5 minutes of manual labor per order.",
+        "automationSummary": "Automation Agent formulated a 6-step end-to-end automation plan. Generated validated TypeScript workflow code. Awaiting Owner Approval gate before production deployment.",
+        "nodesCount": 7
+      }
+    }
+  ],
+  "workflowRuns": [
+    {
+      "_id": "wfr_sandbox_test_1",
+      "workflowId": "wf_quickcart_order_auto",
+      "businessId": "biz_quickcart",
+      "processId": "proc_quickcart_order",
+      "status": "success",
+      "durationMs": 1280,
+      "logs": [
+        {
+          "timestamp": "14:31:01.100",
+          "stepId": "wf_step_1",
+          "message": "Received simulated Shopify Webhook payload for order #9831",
+          "level": "info"
+        },
+        {
+          "timestamp": "14:31:01.320",
+          "stepId": "wf_step_2",
+          "message": "Shopify Risk check: Score 0.02 (Low). Passed validation rule.",
+          "level": "success"
+        },
+        {
+          "timestamp": "14:31:01.550",
+          "stepId": "wf_step_3",
+          "message": "Stripe API call: Verified charge of $142.50 captured successfully",
+          "level": "success"
+        },
+        {
+          "timestamp": "14:31:01.890",
+          "stepId": "wf_step_4",
+          "message": "QuickBooks API call: Generated Invoice #INV-2026-1049 ($142.50)",
+          "level": "success"
+        },
+        {
+          "timestamp": "14:31:02.110",
+          "stepId": "wf_step_5",
+          "message": "Google Sheets API call: Appended row to Orders Tracking tab",
+          "level": "success"
+        },
+        {
+          "timestamp": "14:31:02.380",
+          "stepId": "wf_step_6",
+          "message": "SendGrid API call: Sent confirmation dispatch email to david@kramer.io",
+          "level": "success"
+        }
+      ],
+      "screenshots": [
+        "/demo/order_inbox.png",
+        "/demo/stripe_payment.png",
+        "/demo/quickbooks_invoice.png",
+        "/demo/email_confirm.png"
+      ],
+      "createdAt": "2026-08-11T09:20:00.000Z"
+    },
+    {
+      "_id": "wfr_1789561177127",
+      "workflowId": "wf_quickcart_order_auto",
+      "businessId": "biz_quickcart",
+      "processId": "proc_quickcart_order",
+      "status": "success",
+      "durationMs": 1240,
+      "logs": [
+        {
+          "timestamp": "14:31:01.100",
+          "stepId": "wf_step_1",
+          "message": "Sandbox: Ingested simulated Shopify webhook for Order #9831 ($142.50)",
+          "level": "info",
+          "screenshot": "/demo/order_inbox.png"
+        },
+        {
+          "timestamp": "14:31:01.320",
+          "stepId": "wf_step_2",
+          "message": "Sandbox: Verified Shopify Fraud Risk score = 0.02 (LOW). Criteria validated.",
+          "level": "success",
+          "screenshot": "/demo/risk_assessment.png"
+        },
+        {
+          "timestamp": "14:31:01.550",
+          "stepId": "wf_step_3",
+          "message": "Sandbox: Stripe test charge pi_3N92jkdlsw92 confirmed. Amount captured: $142.50.",
+          "level": "success",
+          "screenshot": "/demo/stripe_payment.png"
+        },
+        {
+          "timestamp": "14:31:01.890",
+          "stepId": "wf_step_4",
+          "message": "Sandbox: QuickBooks Online API created invoice INV-2026-1049. Tax calculated: $12.50.",
+          "level": "success",
+          "screenshot": "/demo/quickbooks_invoice.png"
+        },
+        {
+          "timestamp": "14:31:02.110",
+          "stepId": "wf_step_5",
+          "message": "Sandbox: Google Sheets API appended row 43 to Orders Tracking spreadsheet.",
+          "level": "success",
+          "screenshot": "/demo/google_sheet.png"
+        },
+        {
+          "timestamp": "14:31:02.380",
+          "stepId": "wf_step_6",
+          "message": "Sandbox: SendGrid mail mock sent tracking email to david.kramer@techstudio.com.",
+          "level": "success",
+          "screenshot": "/demo/email_confirm.png"
+        }
+      ],
+      "screenshots": [
+        "/demo/order_inbox.png",
+        "/demo/risk_assessment.png",
+        "/demo/stripe_payment.png",
+        "/demo/quickbooks_invoice.png",
+        "/demo/google_sheet.png",
+        "/demo/email_confirm.png"
+      ],
+      "createdAt": "2026-09-16T12:19:37.127Z"
+    }
+  ],
+  "driftEvents": [
+    {
+      "_id": "drift_event_981",
+      "processId": "proc_quickcart_order",
+      "businessId": "biz_quickcart",
+      "baselineVersionId": "ver_quickcart_v1_0",
+      "observedVersionId": "ver_quickcart_v1_1_drifted",
+      "recordingUrl": "/demo/quickcart_order_flow_drift.mp4",
+      "status": "review_required",
+      "changes": [
+        {
+          "id": "dc_1",
+          "type": "added_step",
+          "stepLabel": "Excel Secondary Audit Check",
+          "position": "Between Payment Check (00:26) and Create Invoice (00:37)",
+          "evidenceFrame": "/demo/excel_drift.png",
+          "timestamp": "00:31",
+          "description": "New employee screen recording showed manual inspection of \"DiscountCodes_2026.xlsx\" before triggering QuickBooks invoice. This step is not in the approved baseline v1.0.",
+          "impact": "medium"
+        }
+      ],
+      "createdAt": "2026-08-28T16:20:00.000Z"
+    },
+    {
+      "_id": "drift_1789561177131",
+      "processId": "proc_quickcart_order",
+      "businessId": "biz_quickcart",
+      "baselineVersionId": "ver_1789561177094",
+      "observedVersionId": "ver_quickcart_v1_1_drifted",
+      "recordingUrl": "/demo/quickcart_order_flow_drift.mp4",
+      "status": "review_required",
+      "changes": [
+        {
+          "id": "dc_1",
+          "type": "added_step",
+          "stepLabel": "Excel Secondary Audit Check (UNAPPROVED STEP)",
+          "position": "Between Payment Check (00:26) and Create Invoice (00:37)",
+          "evidenceFrame": "/demo/excel_drift.png",
+          "timestamp": "00:31",
+          "description": "New employee screen recording showed manual inspection of \"DiscountCodes_2026.xlsx\" before triggering QuickBooks invoice. This step is not in the approved baseline v1.0.",
+          "impact": "medium"
+        }
+      ],
+      "createdAt": "2026-09-16T12:19:37.131Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "_id": "audit_1789561279535",
+      "businessId": "biz_quickcart",
+      "actorId": "user_sarah",
+      "actorName": "Sarah Lin",
+      "action": "PROCESS_CREATED",
+      "entityId": "proc_1789561279532",
+      "entityType": "process",
+      "timestamp": "2026-09-16T12:21:19.535Z",
+      "details": {
+        "name": "QuickCart with Employee Excel Shadow Drift"
+      }
+    },
+    {
+      "_id": "audit_1789561177138",
+      "businessId": "biz_quickcart",
+      "actorId": "user_sarah",
+      "actorName": "Sarah Lin (Owner)",
+      "action": "API_CONNECTOR_CONNECTED",
+      "entityId": "app_1789561177137",
+      "entityType": "integration",
+      "timestamp": "2026-09-16T12:19:37.138Z",
+      "details": {
+        "name": "Sandbox QuickCart API"
+      }
+    },
+    {
+      "_id": "audit_1789561177132",
+      "businessId": "biz_quickcart",
+      "actorId": "drift_agent",
+      "actorName": "Drift Agent (Auditor)",
+      "action": "DRIFT_DETECTED",
+      "entityId": "drift_1789561177131",
+      "entityType": "drift_event",
+      "timestamp": "2026-09-16T12:19:37.132Z",
+      "details": {
+        "baselineId": "ver_1789561177094",
+        "changesCount": 1
+      }
+    },
+    {
+      "_id": "audit_1789561177128",
+      "businessId": "biz_quickcart",
+      "actorId": "system_verification",
+      "actorName": "Verification Agent",
+      "action": "WORKFLOW_VERIFIED_IN_SANDBOX",
+      "entityId": "wf_quickcart_order_auto",
+      "entityType": "workflow",
+      "timestamp": "2026-09-16T12:19:37.128Z",
+      "details": {
+        "runId": "wfr_1789561177127",
+        "durationMs": 1240,
+        "stepsPassed": 6
+      }
+    },
+    {
+      "_id": "audit_1789561177123",
+      "businessId": "biz_quickcart",
+      "actorId": "user_sarah",
+      "actorName": "Sarah Lin (Owner)",
+      "action": "WORKFLOW_APPROVED",
+      "entityId": "wf_quickcart_order_auto",
+      "entityType": "workflow",
+      "timestamp": "2026-09-16T12:19:37.123Z",
+      "details": {
+        "workflowName": "QuickCart Auto-Fulfillment Flow v1.0",
+        "stepsCount": 6
+      }
+    },
+    {
+      "_id": "audit_1",
+      "businessId": "biz_quickcart",
+      "actorId": "user_sarah",
+      "actorName": "Sarah Lin (Owner)",
+      "action": "PROCESS_CREATED",
+      "entityId": "proc_quickcart_order",
+      "entityType": "process",
+      "timestamp": "2026-08-10T14:00:00.000Z",
+      "details": {
+        "name": "Order Processing & Fulfillment"
+      }
+    },
+    {
+      "_id": "audit_2",
+      "businessId": "biz_quickcart",
+      "actorId": "user_sarah",
+      "actorName": "Sarah Lin (Owner)",
+      "action": "WORKFLOW_APPROVED",
+      "entityId": "wf_quickcart_order_auto",
+      "entityType": "workflow",
+      "timestamp": "2026-08-11T09:15:00.000Z",
+      "details": {
+        "version": "v1.0"
+      }
+    },
+    {
+      "_id": "audit_3",
+      "businessId": "biz_quickcart",
+      "actorId": "system_agent_drift",
+      "actorName": "Process Auditor (Drift Agent)",
+      "action": "DRIFT_DETECTED",
+      "entityId": "drift_event_981",
+      "entityType": "drift_event",
+      "timestamp": "2026-08-28T16:20:00.000Z",
+      "details": {
+        "deviation": "Excel Secondary Audit Check inserted between payment and invoice"
+      }
+    }
+  ]
+}

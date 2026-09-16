@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#0f172a; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="windowGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Desktop Backdrop -->
+  <rect width="960" height="540" fill="#0f172a"/>
+  
+  <!-- App Window Container -->
+  <g filter="url(#shadow)">
+    <rect x="20" y="20" width="920" height="500" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    
+    <!-- Titlebar -->
+    <rect x="20" y="20" width="920" height="42" rx="10" fill="#1e3a5f"/>
+    <rect x="20" y="52" width="920" height="10" fill="#1e3a5f"/>
+    
+    <!-- Window controls -->
+    <circle cx="45" cy="41" r="6" fill="#ef4444"/>
+    <circle cx="65" cy="41" r="6" fill="#f59e0b"/>
+    <circle cx="85" cy="41" r="6" fill="#10b981"/>
+    
+    <!-- App Badge & Window Title -->
+    <text x="120" y="46" fill="#f8fafc" font-size="13" font-weight="600">Shopify Fraud Guard</text>
+    <text x="320" y="46" fill="#94a3b8" font-size="12">Fraud Analysis & Risk Evaluation</text>
+    
+    
+
+    <!-- Content Area -->
+    <g transform="translate(20, 62)">
+      
+      <rect x="0" y="0" width="920" height="458" fill="#1e293b"/>
+      <rect x="60" y="40" width="800" height="340" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="2"/>
+      
+      <text x="90" y="85" fill="#10b981" font-size="20" font-weight="700">✓ Risk Level: LOW</text>
+      <text x="90" y="115" fill="#94a3b8" font-size="13">Recommendation: Automatically fulfill order. Verification indicators passed.</text>
+
+      <rect x="90" y="140" width="740" height="40" rx="4" fill="#1e293b"/>
+      <text x="110" y="165" fill="#e2e8f0" font-size="13">✓ Billing address matches credit card registered address</text>
+      <text x="750" y="165" fill="#34d399" font-size="12" font-weight="600">PASS</text>
+
+      <rect x="90" y="190" width="740" height="40" rx="4" fill="#1e293b"/>
+      <text x="110" y="215" fill="#e2e8f0" font-size="13">✓ CVV and 3D Secure verified by issuing bank</text>
+      <text x="750" y="215" fill="#34d399" font-size="12" font-weight="600">PASS</text>
+
+      <rect x="90" y="240" width="740" height="40" rx="4" fill="#1e293b"/>
+      <text x="110" y="265" fill="#e2e8f0" font-size="13">✓ IP geolocation is within 8 miles of shipping location</text>
+      <text x="750" y="265" fill="#34d399" font-size="12" font-weight="600">PASS</text>
+      
+    </g>
+  </g>
+</svg>
